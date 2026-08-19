@@ -177,7 +177,7 @@ def search_label(target: str, root: Path) -> bool:
     patterns = [target.strip(), f"eq:{cleaned}"]
     found = False
     for pat in dict.fromkeys(patterns):
-        cp = run(["rg", "-n", "--fixed-strings", f"\\label{{{pat}}}", "sections", "main.tex", "defs.tex"], root)
+        cp = run(["rg", "-n", "--fixed-strings", f"\\label{{{pat}}}", "main.tex"], root)
         if cp.returncode not in (0, 1):
             continue
         for row in cp.stdout.splitlines():

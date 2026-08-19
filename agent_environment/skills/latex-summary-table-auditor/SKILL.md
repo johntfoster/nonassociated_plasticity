@@ -9,7 +9,7 @@ Use this skill for summary tables and model-count tables.
 
 ## Workflow
 
-1. Read `AGENTS.md`, `main.tex`, and `defs.tex`.
+1. Read `AGENTS.md`, `main.tex`, and `references.bib`.
 2. Locate the table, caption, label, and surrounding prose.
 3. Identify the governing derivation span that the table summarizes.
 4. Compare rows against governing equations, not just nearby prose:
@@ -21,8 +21,8 @@ Use this skill for summary tables and model-count tables.
    - role description
 5. Check for common mismatches:
    - using a closure where a conservation law is the governing equation
-   - omitting distension or source laws
-   - using bare `P_F`/`P_S` instead of manuscript macro forms
+   - omitting a governing internal mechanism or closure
+   - using notation inconsistent with the surrounding derivation
    - stale labels after local equation deletion
    - duplicated equations already presented elsewhere
 

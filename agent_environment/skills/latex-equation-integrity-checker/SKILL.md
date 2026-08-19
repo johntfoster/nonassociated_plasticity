@@ -10,12 +10,12 @@ Use this skill before relying on rendered equation numbers.
 ## Workflow
 
 1. Read `AGENTS.md`. For manuscript interpretation, also read `main.tex` and
-   `defs.tex`.
+   `references.bib`.
 2. Prefer `build/main.aux` over root `main.aux` when both exist.
 3. Use the existing resolver when available:
 
 ```bash
-python3 agent_environment/skills/takeme/scripts/takeme_resolve.py --repo . --target "<number>"
+python3 agent_environment/skills/latex-equation-resolver/scripts/resolve_equation.py "<number>" .
 ```
 
 4. Open the resolved source span and confirm:

@@ -13,7 +13,7 @@ Use this skill to inspect and edit display equations for readable, stable, manus
 
 1. Read repository-specific authoring instructions first, especially rules about display environments, numbering, locked regions, build paths, and generated artifacts.
 2. Identify the canonical root file and included section files. Do not treat section files as standalone if the manuscript has a root such as `main.tex`.
-3. Run `scripts/scan_display_math.py` on the target files or manuscript sections.
+3. Run `scripts/scan_display_math.py` on the target file or `main.tex`.
 4. Inspect each flagged display in source context before editing. Avoid mechanical rewrites across locked regions or macro-heavy environments you have not understood.
 5. Normalize only the issue requested unless the user asks for a manuscript-wide cleanup.
 6. After editing, validate references and numbering with the manuscript's preferred build workflow when available. For display-structure edits, two builds may be necessary to settle references.
@@ -44,7 +44,7 @@ Use this skill to inspect and edit display equations for readable, stable, manus
 Use:
 
 ```bash
-python3 agent_environment/skills/latex-display-math-normalizer/scripts/scan_display_math.py --root . --files sections/target.tex
+python3 agent_environment/skills/latex-display-math-normalizer/scripts/scan_display_math.py --root . --files main.tex
 ```
 
 The script flags likely style issues and prints line spans. Confirm each candidate manually before editing.

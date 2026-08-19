@@ -9,17 +9,14 @@ description: Verify LaTeX manuscript citations against real scholarly-paper meta
 
 Use this skill to audit citation-backed manuscript claims. The goal is not only
 to confirm that a BibTeX key compiles, but to verify that the cited work exists,
-that `all.bib` is accurate, and that the paper actually supports the claim made
+that `references.bib` is accurate, and that the paper actually supports the claim made
 in the manuscript.
 
 ## Required Context
 
 In manuscript repositories, follow local instructions first. For the
-multicomponent reactive-flow repository, read `AGENTS.md`, `VISION.md`,
-`main.tex`, and `defs.tex` before interpreting citation-backed manuscript text.
-
-If the repository has `agent_workflows/checklists/citation_verification.md`,
-read and follow it. Treat it as the local audit contract.
+repository, read `AGENTS.md`, `VISION.md`, `main.tex`, and `references.bib`
+before interpreting citation-backed manuscript text.
 
 ## Workflow
 
@@ -33,7 +30,7 @@ read and follow it. Treat it as the local audit contract.
 2. Resolve citation keys.
    - Use `scripts/scan_citations.py` when helpful to list citation commands,
      contexts, and BibTeX entries.
-   - Locate each key in `all.bib` or the repository bibliography file.
+   - Locate each key in `references.bib`.
    - Check for missing keys, duplicate keys, and obvious field omissions.
 
 3. Verify paper reality and metadata.
@@ -47,7 +44,7 @@ read and follow it. Treat it as the local audit contract.
      and continue with local PDFs and BibTeX inspection.
 
 4. Verify source support.
-   - Prefer a local PDF in `references/pdfs/` or official full text.
+   - Prefer a local source PDF or official full text.
    - For equation claims, inspect the cited equation, local definitions, and
      assumptions in the paper.
    - For prose claims, inspect the relevant section or paragraph; abstracts and
@@ -65,7 +62,7 @@ read and follow it. Treat it as the local audit contract.
 6. Edit only after evidence is clear.
    - If the claim is unsupported, revise the claim or recommend a replacement
      citation.
-   - If metadata is wrong, patch `all.bib` without changing manuscript prose
+   - If metadata is wrong, patch `references.bib` without changing manuscript prose
      unless the source evidence also changes the claim.
    - If the PDF is missing and support cannot be verified, report the gap rather
      than guessing.

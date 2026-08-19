@@ -33,7 +33,7 @@ def strip_comment(line: str) -> str:
 def source_files(root: Path) -> list[Path]:
     main = root / "main.tex"
     if not main.is_file():
-        return sorted(root.glob("sections/*.tex")) or sorted(root.glob("*.tex"))
+        return sorted(root.glob("*.tex"))
     seen: set[Path] = set()
     ordered: list[Path] = [main]
     seen.add(main.resolve())

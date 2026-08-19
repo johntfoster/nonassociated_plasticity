@@ -23,21 +23,12 @@ def module_in(profile: str, name: str) -> bool:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("profile", choices=["manuscript", "research", "verified-decks", "publication", "moose"])
+    parser.add_argument("profile", choices=["manuscript", "research"])
     profile = parser.parse_args().profile
     if profile == "manuscript":
         return 0 if all(shutil.which(name) for name in ("pdflatex", "bibtex")) else 1
     if profile == "research":
         return 0 if module_in(profile, "pypdf") else 1
-    if profile == "verified-decks":
-        return 0 if module_in(profile, "yaml") and module_in(profile, "jsonschema") else 1
-    if profile == "publication":
-        binary = ROOT / ".agent-runtime/venvs/publication/bin/git-filter-repo"
-        if sys.platform == "win32":
-            binary = ROOT / ".agent-runtime/venvs/publication/Scripts/git-filter-repo.exe"
-        return 0 if binary.is_file() else 1
-    helper = ROOT / "agent_environment/skills/setup-moose-conda/scripts/moose_conda_env.sh"
-    return subprocess.run([str(helper), "status"], cwd=ROOT).returncode
 
 
 if __name__ == "__main__":

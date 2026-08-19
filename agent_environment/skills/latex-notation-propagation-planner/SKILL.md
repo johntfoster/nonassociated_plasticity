@@ -9,7 +9,7 @@ Use this skill before any nontrivial notation edit.
 
 ## Workflow
 
-1. Read `AGENTS.md`, `main.tex`, and `defs.tex`.
+1. Read `AGENTS.md`, `main.tex`, and `references.bib`.
 2. Identify the exact symbol role being changed. Separate:
    - kinematic field
    - constitutive argument

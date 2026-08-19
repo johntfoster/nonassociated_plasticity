@@ -21,9 +21,7 @@ document, bibliography, local macros, and exact citation context. Use an
 available citation-verification or research-ingest skill for metadata, PDF
 ingestion, and targeted retrieval when applicable.
 
-For the multicomponent reactive-flow repository, read `AGENTS.md`, `VISION.md`,
-`main.tex`, `defs.tex`, and
-`agent_workflows/checklists/citation_verification.md`.
+Read `AGENTS.md`, `VISION.md`, `main.tex`, and `references.bib`.
 
 Read [canonicality-criteria.md](references/canonicality-criteria.md) before
 ranking candidates.

@@ -11,11 +11,11 @@ Revise manuscript prose so the paper reads as a self-contained theoretical artic
 
 ## Required Context
 
-For the multicomponent reactive-flow manuscript, follow the repository instructions first:
+For this plasticity manuscript, follow the repository instructions first:
 
 1. Read `AGENTS.md` and `VISION.md`.
-2. For manuscript edits, read `main.tex` and `defs.tex`.
-3. Inspect the relevant `sections/*.tex` source through the `main.tex` compilation graph.
+2. For manuscript edits, read `main.tex` and `references.bib`.
+3. Inspect `main.tex` through its compilation graph.
 4. If rendered equation numbers, labels, citations, or display structure are involved, use the appropriate LaTeX skills and current build artifacts before editing.
 
 Use [review-checklist.md](references/review-checklist.md) for the detailed prose and redundancy checklist.

@@ -69,7 +69,7 @@ in source files and prints candidate `file:line` locations.
 When answering, include the resolved label and source location when useful:
 
 ```text
-Equation (12) resolves to `eq:component_spatial_mass` at sections/material_mass.tex:66.
+Equation (12) resolves to its label and source location in `main.tex`.
 ```
 
 For manuscript mechanics claims, cite the TeX source location, not the aux file.

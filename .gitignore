@@ -1,19 +1,4 @@
-# Local/generated workflow state
-.agent-runtime/
-.codex-research/
-.codex/skills/
-.latex-edit-pi/
-.mechpi/
-.ragpi/
-rescan/
-.claude/skills/
-.github/skills/
-.github/agents/
-.grok/skills/
-.opencode/skills/
-.pi/skills/
-
-# LaTeX build outputs
+# Generated LaTeX output
 build/
 *.aux
 *.bbl
@@ -24,64 +9,11 @@ build/
 *.out
 *.synctex.gz
 main.pdf
-*.bak*
-indent.log
 
-# MOOSE/libtool compilation objects and dependency files
-*.o
-*.obj
-*.lo
-*.lo.d
-*.la
-*.a
-*.so
-*.so.*
-*.dylib
-*.dll
-.libs/
-.jitcache/
-tmp_jit_*
+# Local agent and research runtime state
+.agent-runtime/
+.agents/
+.codex/
+.codex-research/
 __pycache__/
 *.py[cod]
-*.orig
-
-# MOOSE application build and test output
-moose_app/lib/
-moose_app/test/lib/
-moose_app/*-opt
-moose_app/*-dbg
-moose_app/*-devel
-moose_app/*-oprof
-moose_app/multicomponent_reactive_flow.yaml
-moose_app/ADRealMonolithic.h
-moose_app/*.csv
-moose_app/examples/*_out*.csv
-moose_app/test/tests/**/*.csv
-!moose_app/test/tests/**/gold/*.csv
-
-# Generated installation mirrors and validation-run artifacts
-/include/
-/share/
-validation/results/
-multicomponent-reactive-flow-tailscale.code-workspace
-
-# Local design explorations and externally retrieved source copies
-fennec_logo*.svg
-msnpd2.tex
-ignatova_shu.tar.gz
-ignatova_shu_src.tar.gz
-
-# Generated diagnostics and test-run state
-moose_app/jacobian_fresh.txt
-moose_app/.previous_test_results.json
-
-# Research PDFs are intentional source/context files.
-!references/pdfs/*.pdf
-
-# Local note/source files
-bedford_drumheller_identity_1_28_note.tex
-bedford_drumheller_variation_note.tex
-bedford_drumheller_misible.pdf
-mixture_superposition_intrinsic_density_note.tex
-variation_note_bd_compositional.md
-variation_note_bd_compositional.tex

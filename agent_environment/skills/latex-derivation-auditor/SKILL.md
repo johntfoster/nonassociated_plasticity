@@ -13,7 +13,7 @@ Use this skill to audit mathematical consistency in LaTeX manuscripts where equa
 
 1. Read the repository's agent or authoring instructions first when present, especially `AGENTS.md`, `VISION.md`, or equivalent manuscript guidance.
 2. Identify the canonical LaTeX root, usually `main.tex`. Follow `\input`, `\include`, macro files, theorem/equation packages, and bibliography declarations from that root.
-3. Inspect notation anchors before judging math: macro files such as `defs.tex`, local definitions near the target section, and labels/cross-references.
+3. Inspect notation anchors before judging math: local definitions, labels, and cross-references in `main.tex`.
 4. If the user cites rendered equation numbers, resolve those numbers to labels/source lines before auditing. Prefer an existing equation resolver skill or active build `.aux` files.
 5. Run `scripts/scan_derivation_surface.py` on the target files to collect equation environments, labels, references, state-set phrases, derivatives, and common propagation-sensitive symbols.
 6. Build a dependency map from the source:
@@ -54,7 +54,7 @@ Use this skill to audit mathematical consistency in LaTeX manuscripts where equa
 Use:
 
 ```bash
-python3 agent_environment/skills/latex-derivation-auditor/scripts/scan_derivation_surface.py --root . --files sections/target.tex
+python3 agent_environment/skills/latex-derivation-auditor/scripts/scan_derivation_surface.py --root . --files main.tex
 ```
 
 The script is a surface scanner, not a proof checker. Use its output to focus source inspection; do not treat matches as mathematical findings until the surrounding TeX has been read.

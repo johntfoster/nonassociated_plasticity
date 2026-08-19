@@ -10,7 +10,7 @@ import subprocess
 import sys
 
 
-PROFILES = {"research", "verified-decks", "publication"}
+PROFILES = {"research"}
 
 
 def repository_root() -> Path:

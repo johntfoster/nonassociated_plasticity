@@ -40,7 +40,7 @@ def strip_comment(line: str) -> str:
 def source_files(root: Path) -> list[Path]:
     main = root / "main.tex"
     if not main.is_file():
-        return sorted(root.glob("sections/*.tex")) or sorted(root.glob("*.tex"))
+        return sorted(root.glob("*.tex"))
 
     seen: set[Path] = set()
     ordered: list[Path] = []
@@ -77,7 +77,7 @@ def bib_files(root: Path) -> list[Path]:
                         candidate = candidate.with_suffix(".bib")
                     if candidate.is_file():
                         found.append(candidate)
-    default = root / "all.bib"
+    default = root / "references.bib"
     if default.is_file() and default not in found:
         found.append(default)
     return found
