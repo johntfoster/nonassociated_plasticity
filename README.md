@@ -2,7 +2,8 @@
 
 `main.tex` is the manuscript root and `references.bib` is its bibliography.
 Build with `latexmk -outdir=build main.tex`; all generated LaTeX artifacts
-belong in `build/`.
+belong in `build/`. The build derives the first and latest commit dates used in
+the generative-AI declaration directly from the reachable Git history.
 
 The repository retains only manuscript-development instructions and skills in
 `AGENTS.md` and `agent_environment/`.
