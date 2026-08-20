@@ -10,6 +10,9 @@ build/
 *.synctex.gz
 main.pdf
 
+# Local full-text scholarly references
+references/pdfs/*.pdf
+
 # Local agent and research runtime state
 .agent-runtime/
 .agents/
