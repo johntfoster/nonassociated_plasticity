@@ -17,6 +17,9 @@ references/pdfs/*.pdf
 .agent-runtime/
 .agents/
 .codex/
+.claude/
+.opencode/
+.github/skills/
 .codex-research/
 __pycache__/
 *.py[cod]

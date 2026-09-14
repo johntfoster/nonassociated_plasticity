@@ -1,5 +1,17 @@
 # AGENTS.md
 
+## Shared workflow dependency
+
+- This paper repository is the primary context. Read
+  `.agent/shared/AGENTS.shared.md`; the scientific and manuscript rules below
+  override shared workflow defaults.
+- The reusable core is pinned as the `.agent/shared` Git submodule. Route work
+  with `tools/agentctl route "<task>"`; shared skills are canonical under
+  `.agent/shared/skills/`, and the paper-local `takeme` skill remains under
+  `agent_local/skills/`.
+- Do not inspect sibling paper repositories unless John explicitly requests it
+  or `research-dependencies.yml` declares the exact pinned source needed.
+
 ## Scope
 
 This repository contains only the LaTeX theory manuscript *Apparent

@@ -1,5 +1,8 @@
-# Agent environment
+# Compatibility layer
 
-`tools/agentctl` routes manuscript and research tasks to the repository-local
-LaTeX skills. The dependency manifest defines only the manuscript and research
-profiles used by this theory-paper repository.
+Reusable skills are canonical in the pinned `.agent/shared` submodule.
+Entries under `agent_environment/skills/` are compatibility symlinks for older
+commands. New routing uses `tools/agentctl` and `agent-profile.json`.
+
+Paper-specific skills belong in `agent_local/skills/`. Generated harness copies
+and runtime state remain ignored.

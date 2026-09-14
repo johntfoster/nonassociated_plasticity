@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "manuscript_root": "main.tex",
+  "build_directory": "build",
+  "harnesses": {
+    "codex": {"skills_dir": ".codex/skills"}
+  },
+  "routes": [
+    {
+      "all": ["equation"],
+      "skills": ["latex-equation-integrity-checker", "latex-equation-resolver"],
+      "profiles": ["manuscript"]
+    },
+    {
+      "any": ["citation", "bibliography"],
+      "skills": ["latex-citation-verifier", "canonical-reference-finder"],
+      "profiles": ["research"]
+    }
+  ],
+  "profiles": {
+    "manuscript": {
+      "description": "LaTeX source interpretation, equation resolution, derivation, notation, narrative, and display audits.",
+      "triggers": ["manuscript", "latex", "equation", "notation", "derivation"],
+      "skills": ["latex-*", "manuscript-*"],
+      "checks": [{"argv": ["python3", "tools/check_dependency_profile.py", "manuscript"]}],
+      "provision": [{"argv": ["python3", "tools/provision_latex.py"]}]
+    },
+    "research": {
+      "description": "Local PDF extraction and scholarly-source verification.",
+      "triggers": ["research pdf", "literature review", "source paper", "citation", "bibliography"],
+      "skills": ["latex-research-ingest", "latex-citation-verifier", "canonical-reference-finder"],
+      "checks": [{"argv": ["python3", "tools/check_dependency_profile.py", "research"]}],
+      "provision": [{"argv": ["python3", "tools/provision_python_profile.py", "research"]}]
+    }
+  }
+}
