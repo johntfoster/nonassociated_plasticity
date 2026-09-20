@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript and identify the source commit used."
+title: "Apparent non-associative plasticity from distinct isochoric and volumetric mechanisms"
+authors:
+  - family-names: Foster
+    given-names: John T.
+repository-code: "https://github.com/johntfoster/nonassociated_plasticity"
+url: "https://johntfoster.github.io/nonassociated_plasticity/"
