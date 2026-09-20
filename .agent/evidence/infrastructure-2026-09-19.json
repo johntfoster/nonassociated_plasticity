@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "project": "nonassociated_plasticity",
+  "observed_at": "2026-09-20T01:21:05.700918+00:00",
+  "workflow_revision": "bd82f7bed44ecb3ae7e2e6895a990ef456b8c23c",
+  "scope": "Infrastructure-only migration; no manuscript build, edits, staging, or scientific-release certification.",
+  "local_container": {
+    "project": "nonassociated_plasticity",
+    "image": "mcr.microsoft.com/devcontainers/python@sha256:ca7b20585cf65295cd0cef8ae8f02a008c1c85e83909d1e2af8d19706d3f34ee",
+    "scope": "clean-clone infrastructure startup only; no manuscript/scientific build",
+    "exit_code": 0,
+    "tracked_and_untracked_status": ""
+  },
+  "hosted_codespace": {
+    "status": "passed",
+    "head": "43d907d60c595e21279382f8e18085de43c101d6",
+    "instance": "miniature-robot-9g54g556rcxp97",
+    "observed_at": "2026-09-20T01:11:46.144534+00:00",
+    "checks": [
+      "SSH access",
+      "post-create startup",
+      "pinned submodule initialization",
+      "agentctl check",
+      "manifest check",
+      "clean Git status"
+    ],
+    "scope": "source inspection and infrastructure; scientific toolchain not run",
+    "cleanup": "temporary Codespace deleted after verification"
+  },
+  "site": {
+    "project": "nonassociated_plasticity",
+    "url": "https://johntfoster.github.io/nonassociated_plasticity/",
+    "status": 200,
+    "title": "Apparent non-associative plasticity from distinct isochoric and volumetric mechanisms",
+    "sha256": "c81bcd07da43ed52933685d80712323699e85bfacad63251cbf833df552a66c9"
+  },
+  "release": {
+    "project": "nonassociated_plasticity",
+    "head": "43d907d60c595e21279382f8e18085de43c101d6",
+    "url": "https://github.com/johntfoster/nonassociated_plasticity/releases/tag/infrastructure-v0.2.1",
+    "prerelease": true,
+    "assets": [
+      {
+        "name": "environment-verification.json",
+        "sha256": "30cfa051d412ea4b54921041674f089f3d3b0ed9a55dca1c7f046bbe8bad0015",
+        "verification": "GitHub-reported uploaded-asset digest"
+      },
+      {
+        "name": "provenance.json",
+        "sha256": "6bcf6cf4dfd339a1981ffd0d3e0fac90e094a3b70a227007de552b59436b0d3a",
+        "verification": "GitHub-reported uploaded-asset digest"
+      },
+      {
+        "name": "repository.bundle",
+        "sha256": "264e16d711885c1a0964e2aee6475cdab8ec08bd8a1ddb5a471ad5c735072917",
+        "verification": "GitHub-reported uploaded-asset digest"
+      },
+      {
+        "name": "SHA256SUMS",
+        "sha256": "faea2e75f6314d431a30070337b69c581c4ef6d713539a03dd1ad6cdcb75b406",
+        "verification": "GitHub-reported uploaded-asset digest"
+      },
+      {
+        "name": "source.tar",
+        "sha256": "3bdba4571ec7f6779a1d6a2a838a90ec978f46d1fe2233c308e8aafba4526f76",
+        "verification": "GitHub-reported uploaded-asset digest"
+      }
+    ]
+  },
+  "ci": {
+    "Companion website": {
+      "id": 35480704118,
+      "head_sha": "43d907d60c595e21279382f8e18085de43c101d6",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/johntfoster/nonassociated_plasticity/actions/runs/35480704118"
+    },
+    "Research infrastructure": {
+      "id": 35480704117,
+      "head_sha": "43d907d60c595e21279382f8e18085de43c101d6",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/johntfoster/nonassociated_plasticity/actions/runs/35480704117"
+    },
+    "Graph Update: pip in /agent_environment/requirements #1532995082": {
+      "id": 32295460713,
+      "head_sha": "2aa5d9fe6e9560ca753d20eeb3f44af5e2b7a04e",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/johntfoster/nonassociated_plasticity/actions/runs/32295460713"
+    }
+  },
+  "preservation": {
+    "protected_files": 6,
+    "hashes_mtimes_inodes_unchanged": true,
+    "original_dirty_state_preserved": true
+  }
+}
