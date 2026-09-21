@@ -3,7 +3,8 @@
   "manuscript_root": "main.tex",
   "build_directory": "build",
   "harnesses": {
-    "codex": {"skills_dir": ".codex/skills"}
+    "codex": {"skills_dir": ".codex/skills"},
+    "copilot": {"skills_dir": ".github/skills"}
   },
   "routes": [
     {
