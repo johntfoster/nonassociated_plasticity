@@ -1,0 +1,318 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,microtype,needspace}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.3em}
+\title{Response to reviewers\\MPS-D-26-01262}
+\author{John T. Foster}
+\date{29 October 2026}
+\begin{document}
+\maketitle
+We thank the reviewers for their careful assessment. The revised manuscript is
+\emph{Apparent non-associated plasticity from distinct isochoric and volumetric
+mechanisms}. The responses below address every substantive point in the
+provided reports from Reviewers 1 and 3. Reviewer wording is reproduced with
+line-break hyphenation and math typesetting normalized. All section, equation, figure, table, and page references
+refer to the revised clean manuscript, not the marked-up version.
+
+The main revisions do three things. They explain why the independent model
+remains associated and how the coupled model produces a different flow
+direction. They identify the elastic energies that the split allows. They add
+an exact finite-deformation example that a reader can check by hand.
+
+\Needspace{6\baselineskip}
+\section{R1-General}
+\textbf{Comment.}\begin{quote}\small
+I find this manuscript quite well written and I like the fact that it is sharp and quite clearly focused. However, I am not sure that the obtained result (basically, what the Author writes at the end of page 6 and about Eq. (23), its extension to a specific finite-deformation framework, and its link with Drucker-Prager plasticity through a kinematic constraint under specific conditions) is enough to deserve publication in JMPS. Perhaps, the Author could convince me by adding a thorough discussion on relevant implications of the proposed way of seeing non-associated plasticity as the combination of two independent associated plasticity mechanisms. Also, more complex options than the Flory split might help in appreciating this proposal.
+\end{quote}
+\textbf{Response.} The revised discussion explains what separating the plastic
+rates means for a confined specimen that dilates while it shears. Shear
+supplies the work, and that work pays for two things: expansion against the
+confining pressure and dissipation. The dilation slope sets the expansion work,
+while the difference between the friction and dilation slopes sets the
+dissipation. We connect this work budget explicitly to Collins and Houlsby's
+stress-dependent dissipation construction and explain which finite-deformation
+factor carries each rate.
+
+We also separate two requirements that are often treated as one: nonnegative
+dissipation, and classical maximum plastic dissipation over a fixed convex
+elastic domain. The independent model satisfies both with respect to its
+complete domain. In the coupled model, normality holds in generalized-force
+space when the pressure is held fixed. Because the dissipative resistance
+depends on pressure, the normal in the physical stresses differs. Two
+independent associated mechanisms and one coupled shear-dilation mechanism
+therefore represent different material responses.
+
+The exact homogeneous finite-deformation example states the elastic energy, the
+preload, the loading history, and the resulting stress path, volume change,
+dissipation, and small-strain limit. The energy-class derivation identifies the
+extra state variable, conjugate force, and evolution law that an independently
+energetic porosity model would need. We explain the physical role of that
+extension and use the Flory closure for the worked example.
+
+\textbf{Revised locations.} Section~1 (p.~1); Section~3.1 (p.~5); Section~5.1 (p.~10); Section~6.1 (p.~12); Section~7 (p.~14); Section~8 (p.~15).
+\Needspace{6\baselineskip}
+\section{R1-A}
+\textbf{Comment.}\begin{quote}\small
+The Author writes that the multiplicative decomposition of the deformation gradient is "classical". However, it does not necessarily represent the real behaviour of the materials here concerned with (while it should hold in crystal plasticity, as demonstrated by Reina and Conti, 2014, JMPS). Because of this, for instance, I disagree with the terminology "true-plastic" velocity used for \(\bar L^p\); moreover, about this terminology, I would, in case, use it for the difference between the velocity gradient and \(\bar L^e=\dot{\bar F}^e(\bar F^e)^{-1}\), which is not what here is defined as \(\bar L^p\).
+\end{quote}
+\textbf{Response.} We agree that an established multiplicative decomposition
+does not by itself show what the microscopic mechanisms are in these materials.
+The introduction now calls it a modeling choice and cites Reina and Conti
+(2014). Their crystalline-slip construction does not cover the granular or
+pore-collapse case, so the manuscript treats the present factors as
+constitutive assumptions that require material-specific evidence.
+
+We now call the mechanism ``isochoric plastic deformation'' and describe
+\(\bar{\mathbf L}^p\) as its velocity gradient in the intermediate
+configuration. We keep ``true deformation'' for the kinematic factor in
+Drumheller's split. The plastic rate reaches the current configuration as
+\(\bar{\mathbf F}^e\bar{\mathbf L}^p(\bar{\mathbf F}^e)^{-1}\). The text now
+explains why this is not the difference between the total spatial velocity
+gradient and the elastic true-deformation rate: that difference also contains
+the distension contribution. The added reference is Reina and Conti,
+\emph{JMPS} 67 (2014), 40--61, DOI:
+\href{https://doi.org/10.1016/j.jmps.2014.01.014}{10.1016/j.jmps.2014.01.014}.
+
+\textbf{Revised locations.} Section~1 (p.~1); Section~2 (p.~3).
+\Needspace{6\baselineskip}
+\section{R1-B}
+\textbf{Comment.}\begin{quote}\small
+It is not clear from the text that the first equation in section 2.1 straightforwardly follows from Eqs. (1)--(4). Up to that point, it is just standard finite-deformation kinematics, such that I find sentences like "The present single-phase theory does not carry volume fraction or mass exchange, so an application must instead prescribe a constitutive evolution or constraint for a." obscure, on the one hand, and obvious, on the other hand. In fact, at the end of the day, the Author just considers the trivial assumption in Eq. (5). Analogously, Eq. (8) comes straightforwardly from finite-deformation elasto-plasticity relying on the multiplicative decomposition of the deformation gradient. So, up to the end of section 3 I find it difficult to appreciate either novelties or a sufficiently clear and thorough discussion of the literature.
+\end{quote}
+\textbf{Response.} The closure section now identifies the determinant-rate
+relation as Jacobi's identity and states what a closure has to supply. We
+connect the scalar distension to Herrmann's porous-compaction description and
+to Drumheller's mixture kinematics, and we distinguish the absolute
+bulk-to-solid volume ratio from a reference-normalized change. When volume
+fraction is retained, mass balance identifies the distension and a constitutive
+law determines its evolution.
+
+Sections~2 and~3 establish the kinematics and the thermodynamic restrictions
+that the model uses. The rescaling calculation shows that, under the stated
+power balance, the two unrestricted elastic factors enter the stored energy
+only through their combined elastic deformation. The Flory specialization
+follows from constrained isochoric variations. The revised discussion states
+the contribution of the paper directly: a physical reading of the plastic-power
+terms, the activation and energetic restrictions they imply, and a worked
+finite-deformation realization. It also compares the construction with Collins
+and Houlsby's formulation and with classical maximum plastic dissipation.
+
+\textbf{Revised locations.} Section~2.1 (p.~4); Section~3.1 (p.~5); Section~5.1 (p.~10); Section~7 (p.~14).
+\Needspace{6\baselineskip}
+\section{R1-C-i}
+\textbf{Comment.}\begin{quote}\small
+The Author uses "associative" in the title only, while all along the manuscript He uses "associated". Does it make sense?
+\end{quote}
+\textbf{Response.} The title now uses ``non-associated,'' matching the
+terminology used throughout the manuscript.
+
+\textbf{Revised locations.} Title (p.~1).
+\Needspace{6\baselineskip}
+\section{R1-C-ii}
+\textbf{Comment.}\begin{quote}\small
+Eq. (1) does not characterise at all the two-point tensors A and \(\bar F\) and I do not understand the sentence below it.
+\end{quote}
+\textbf{Response.} We now introduce the split through a physical distinction:
+compression of the solid material, and change in the volume assigned to it. The
+paragraph following Eq.~(1) defines the two maps in order. The true-deformation
+tensor takes reference line elements into an intermediate configuration that
+represents deformation of the solid material. The distension tensor takes them
+from that configuration into the current spatial tangent space. We state that
+these are local two-point maps whose global compatibility is a separate
+condition, and we point to the closure that identifies the factors.
+
+The construction is explicitly grounded in Drumheller (2000), Sections 3--4 and
+8.2. We also cite Herrmann's (1969) pressure--distension model to explain the
+scalar bulk-to-solid volume ratio, and we distinguish that scalar
+interpretation from the full tensorial map. The closure section explains the
+reference normalization and the additional evolution information required when
+volume fraction is retained.
+
+\textbf{Revised locations.} Eq.~1 (p.~3); Section~2 (p.~3); Section~2.1 (p.~4).
+\Needspace{6\baselineskip}
+\section{R1-C-iii}
+\textbf{Comment.}\begin{quote}\small
+In the definitions in the equations in between Eq. (2) and Eq. (3) there are symbols that, although are clear, are left undefined.
+\end{quote}
+\textbf{Response.} We now define the identity tensor, the elastic and plastic
+superscripts, the logarithmic distensions, and the material time derivative.
+The superscripts are defined where the factors are split, and the remaining
+definitions follow immediately after the isotropic-factor display.
+
+\textbf{Revised locations.} Section~2 (p.~3); Eq.~3 (p.~3).
+\Needspace{6\baselineskip}
+\section{R1-C-iv}
+\textbf{Comment.}\begin{quote}\small
+The first time the Kirchhoff stress is used (at about the beginning of section 3) is an undefined symbol.
+\end{quote}
+\textbf{Response.} At first use we now define the Kirchhoff stress as
+\(\boldsymbol\tau=\mathbf P\mathbf F^T=J\boldsymbol\sigma\), and we name the
+first Piola and Cauchy stresses before the frame-indifference discussion.
+
+\textbf{Revised locations.} Section~3 (p.~5).
+\Needspace{6\baselineskip}
+\section{R1-C-v}
+\textbf{Comment.}\begin{quote}\small
+In several quotations in the text the year is missing.
+\end{quote}
+\textbf{Response.} Years have been added to the narrative author attributions,
+including Drucker, Bland, Drucker--Prager, Collins--Houlsby, Drumheller,
+Foster and coauthors, Srinivasa, and Ulloa and coauthors. The full reference
+entries retain publication years. Numeric citation callouts are retained, as
+required by the manuscript's bibliography style.
+
+\textbf{Revised locations.} Section~1 (p.~1); Section~2 (p.~3); Section~5.1 (p.~10).
+\Needspace{6\baselineskip}
+\section{R1-C-vi}
+\textbf{Comment.}\begin{quote}\small
+I do not understand the reasoning about the first equation on page 5: doesn't the expression between round brackets vanish anyway?
+\end{quote}
+\textbf{Response.} Yes. If the unrestricted tensor stress restriction is
+imposed first, the whole bracket vanishes and its deviatoric projection adds
+nothing. The revised text states that the Flory calculation is instead an
+alternative derivation through a constrained process. There, only
+volume-preserving elastic variations are admissible, so an extension of the
+elastic energy away from the isochoric manifold need satisfy the projected
+condition and not the stronger unrestricted tensor equation. The scalar
+volumetric condition supplies the spherical response.
+
+\textbf{Revised locations.} Section~3.1 (p.~5); Eq.~11 (p.~6).
+\Needspace{6\baselineskip}
+\section{R1-C-vii}
+\textbf{Comment.}\begin{quote}\small
+First line of section 4: "Their" seems to me incorrect, as Eq. (9) refers to only one of the two mechanisms.
+\end{quote}
+\textbf{Response.} The opening of Section~4 now says ``For the isochoric
+mechanism, the equivalent stress ...,'' rather than assigning both equivalent
+quantities to both mechanisms.
+
+\textbf{Revised locations.} Section~4 (p.~7); Eq.~13 (p.~7).
+\Needspace{6\baselineskip}
+\section{R1-C-viii}
+\textbf{Comment.}\begin{quote}\small
+Kuhn-Tucker -> Karush-Kuhn-Tucker.
+\end{quote}
+\textbf{Response.} ``Kuhn--Tucker'' has been replaced by ``Karush--Kuhn--Tucker.''
+
+\textbf{Revised locations.} Section~4 (p.~7); Eq.~16 (p.~7).
+\Needspace{6\baselineskip}
+\section{R3-1}
+\textbf{Comment.}\begin{quote}\small
+The interpretation of association deserves a more explicit distinction between the independent and coupled constructions. In Section 4, the sum of active associated flow directions remains within the normal cone of the complete elastic domain, even if it is not normal to either individual surface. In Section 5, the generalized-force derivative is instead taken with pressure held fixed, before identifying the volumetric force with minus the physical pressure. Please distinguish these two settings and explain how they support the term “apparent non-associativity.” In particular, clarify that the proportional volumetric-to-shear plastic-rate relation is an imposed constitutive constraint. A sketch of the yield domain and flow directions would help communicate this useful interpretation.
+\end{quote}
+\textbf{Response.} The independent model is now described consistently as
+associated with its complete convex elastic domain. At a fixed hardening state,
+the combined rate is a nonnegative sum of the outward normals to the active
+yield surfaces, so it belongs to the normal cone of the full domain.
+
+In the coupled model, the derivative with respect to the generalized forces is
+taken at fixed pressure. Replacing the volumetric force by minus the physical
+pressure then gives a yield surface whose derivative also contains the pressure
+dependence of the dissipative strength. We now identify the dilation ratio
+explicitly as an imposed constitutive constraint, and the loading consistency
+condition includes the change of pressure. The discussion relates this
+distinction to maximum plastic dissipation and explains the shear work needed
+to drive dilation under confinement.
+
+We explain the geometry with the explicit force-space equations and the loading
+comparison rather than with a schematic sketch. These specify which variables
+are held fixed and show the difference in physical response directly.
+
+\textbf{Revised locations.} Section~4 (p.~7); Section~5 (p.~8); Eq.~23 (p.~9); Section~7 (p.~14); Section~8 (p.~15).
+\Needspace{6\baselineskip}
+\section{R3-2}
+\textbf{Comment.}\begin{quote}\small
+Please clarify the admissible free-energy class in Section 3. When the elastic true-deformation and distension rates are treated as independent, Eqs. (7a,b) jointly imply invariance of the energy under a compensating rescaling of these elastic variables. How does this restriction accommodate the interpretation of distension as an independently evolving microstructural quantity? A short derivation and a clear distinction between the unrestricted formulation and the Flory-closed specialization would strengthen the thermodynamic presentation.
+\end{quote}
+\textbf{Response.} We agree, and the revised text now derives the energy class
+explicitly. Contracting the unrestricted tensor restriction with the elastic
+true-deformation factor and combining it with the scalar restriction gives
+\(\psi_{,\bar{\mathbf F}^e}:\bar{\mathbf F}^e=3\psi_{,\zeta^e}\). Integrating
+this identity along the compensating rescaling gives
+\(\psi=\widehat\psi(e^{\zeta^e/3}\bar{\mathbf F}^e,\kappa_d,\kappa_v)\).
+
+Under the stated power balance, changing the two unrestricted factors in
+compensating ways therefore does not change the energy, and the factors do not
+store independent distension energy. We have removed the implication that a
+closure or evolution law alone can create that energetic degree of freedom. An
+independently energetic porosity or other microstructure requires an additional
+state variable and conjugate force together with an appropriate balance or
+evolution law, and that force is not generally just minus the pressure. The
+Flory-closed specialization is distinguished by its constrained isochoric
+process directions and its projected stress condition.
+
+\textbf{Revised locations.} Section~3.1 (p.~5); Eq.~8 (p.~5); Eq.~9 (p.~6); Eq.~10 (p.~6); Eq.~11 (p.~6).
+\Needspace{6\baselineskip}
+\section{R3-3}
+\textbf{Comment.}\begin{quote}\small
+The small-strain proportional-loading calculation is informative. To substantiate the finite-deformation extension in Section 6, please add one worked homogeneous material-point example within the stated compressive loading regime. Specify the elastic free energy, initial state, parameters and loading history, and report the stress path, plastic volume change and plastic dissipation. It would also be useful to verify preservation of the isochoric plastic determinant and recovery of the small-strain limit. This example would make the formulation easier to assess and implement without requiring a large-scale boundary-value simulation.
+\end{quote}
+\textbf{Response.} The new example in Section~6.1 uses an objective isotropic
+Hencky-type elastic energy, a stress-free initial state, an elastic
+hydrostatic/shear preload, and a prescribed proportional coaxial
+logarithmic-strain history. All elastic constants and plastic parameters are
+stated. The diagonal factors commute, so the solution is closed-form and
+Table~1 is evaluated from it directly.
+
+The example reports Kirchhoff and Cauchy stress relations, total and plastic
+volume ratios, the logarithmic plastic volume change, the instantaneous
+dissipation, and the accumulated dissipated energy. The accumulated value is
+\(46.6941\,\mathrm{kJ/m^3}\) of reference volume at the final state. The
+example verifies \(\det\bar{\mathbf F}^p=1\) identically and gives the exact
+power balance. Scaling the preload and the accumulated logarithmic strains
+recovers the small-strain stress-rate law and multiplier, and the Cauchy and
+Kirchhoff measures are compared explicitly at three scales. Together these
+provide analytical checks for a material-point implementation along the stated
+loading history.
+
+\textbf{Revised locations.} Section~6.1 (p.~12); Eq.~31 (p.~12); Eq.~34 (p.~13); Eq.~35 (p.~13); Table~1 (p.~14); Eq.~36 (p.~13); Eq.~37 (p.~13).
+\Needspace{6\baselineskip}
+\section{R3-4}
+\textbf{Comment.}\begin{quote}\small
+Please distinguish Kirchhoff and Cauchy pressure invariants explicitly, for example by using different subscripts, and state whether the reported dissipation is measured per unit reference or current volume.
+\end{quote}
+\textbf{Response.} The stress definition now relates the Kirchhoff and Cauchy
+stresses explicitly. The finite-deformation notation uses \(p\) for the
+Kirchhoff pressure and \(p/J\) for the corresponding Cauchy pressure. The
+worked example reports both pressures and gives the shear-invariant conversion
+for its coaxial path. The thermodynamic section now states that dissipation is
+power per reference volume, and division by \(J\) gives the value per current
+volume. The example and its table state their units and volume basis.
+
+\textbf{Revised locations.} Section~3 (p.~5); Section~3.1 (p.~5); Eq.~33 (p.~13); Table~1 (p.~14).
+\Needspace{6\baselineskip}
+\section{R3-5}
+\textbf{Comment.}\begin{quote}\small
+Please clarify how the active-flow equations are initialized under the stated positive-equivalent-stress restriction, since the normalized deviatoric direction is undefined at the stress-free cone apex.
+\end{quote}
+\textbf{Response.} The revised text specifies an elastic path from the
+stress-free state to the smooth yield surface. Hydrostatic elastic compression
+first enters \(p>0\), \(q=0\), \(f<0\), and elastic shear then reaches the
+surface at positive \(q\). The worked example gives both preload segments and
+verifies positive \(q\) throughout active loading. The normalized direction is
+evaluated during plastic loading, when \(q>0\). Plastic loading directly from
+the apex requires a separately specified nonsmooth treatment.
+
+\textbf{Revised locations.} Section~6 (p.~12); Eq.~28 (p.~12); Section~6.1 (p.~12).
+\Needspace{6\baselineskip}
+\section{R3-6}
+\textbf{Comment.}\begin{quote}\small
+The repeated explanations of the Flory equivalence and combined friction–dilatancy coefficient in Sections 5–8 could be shortened. A brief concluding statement of the loading and material assumptions would improve readability.
+\end{quote}
+\textbf{Response.} We removed the repeated algebraic summary after the
+dissipation calculation and the repeated generalized-force derivation at finite
+deformation. The discussion and conclusions are rewritten around the
+distinction between activation, power, and closure rather than repeating the
+Flory equivalence and the friction--dilatancy coefficient. The concluding
+paragraph collects the assumptions: isotropy, cohesionless response, no
+energetic hardening, smooth active states with \(q>0\), and monotone
+compression. The worked example adds coaxial loading and its stated elastic
+energy.
+
+\textbf{Revised locations.} Section~5 (p.~8); Section~6 (p.~12); Section~7 (p.~14); Section~8 (p.~15).
+\end{document}

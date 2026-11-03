@@ -55,6 +55,11 @@ or unrelated research artifacts.
 - Run manuscript builds through the repository-local
   `latex-workshop-recompile` skill after every edit to `main.tex` or
   `references.bib`.
+- During the current revision, update the marked-up comparison after every
+  manuscript edit. Run `python3 tools/build-revision.py` to build the current
+  manuscript, reviewer response, and comparison in `build/`.
+- The editable reviewer response is `revisions/point-by-point-response.tex`.
+  Check its manuscript locations and claims as the revision evolves.
 - Direct all LaTeX output to `build/`. Confirm that no generated artifacts are
   left at the repository root.
 - Before changing citation-backed text or bibliography data, verify the cited

@@ -18,7 +18,7 @@
 \providecommand{\GitHistoryFirstDate}{date unavailable}
 \providecommand{\GitHistoryLastDate}{date unavailable}
 
-\title{Apparent non-associative plasticity from distinct isochoric and
+\title{Apparent non-associated plasticity from distinct isochoric and
 volumetric mechanisms}
 \author{John T. Foster}
 \date{\today}
@@ -28,123 +28,139 @@ volumetric mechanisms}
 \maketitle
 
 \begin{abstract}
-	Pressure-dependent plasticity commonly represents friction and dilatancy with
-	a yield function and a distinct plastic potential.  We examine a framework
-	with distinct isochoric and volumetric mechanisms.  The finite-deformation
-	kinematics follow from \(\mbf F=\mbf A\bar{\mbf F}\), where \(\mbf A\) is
-	the distension gradient and \(\bar{\mbf F}\) is the true-deformation
-	gradient.  An elastic--plastic split of each factor assigns isochoric
-	rearrangement of the solid material to true-plastic deformation and plastic
-	change in the volume assigned to it to plastic distension.  An independent
-	distension mechanism requires an additional microstructural closure; under
-	the Flory specialization, it becomes the conventional plastic volume ratio.
-	The isothermal free-energy inequality shows which stress drives each plastic
-	rate.  With separate yield conditions, each mechanism obeys an
-	associated flow rule.  Their combined plastic strain rate, however, need not
-	be normal to either yield surface.
+	Frictional materials can change volume as they shear. Pressure-dependent
+	plasticity models often use one function to decide when plastic flow starts
+	and a second function to prescribe the volume change that accompanies it.
+	We examine a framework in which plastic shape change and plastic volume
+	change are distinct mechanisms. The finite-deformation kinematics follow
+	from \(\mbf F=\mbf A\bar{\mbf F}\), where \(\mbf F\) is the deformation
+	gradient, \(\mbf A\) is the distension gradient, and \(\bar{\mbf F}\) is the
+	true-deformation gradient. An elastic--plastic split of each factor assigns
+	the plastic shape change of the solid material to \(\bar{\mbf F}^{p}\) and
+	the plastic change in the volume assigned to it to \(\mbf A^{p}\). Under
+	the Flory closure, the plastic distension \(a^p\) is the conventional
+	plastic volume ratio. A microstructural distension that stores its own
+	energy requires an additional state variable, conjugate force, and
+	evolution law.
+	The isothermal free-energy inequality then shows which stress drives each
+	plastic rate. With separate yield conditions, each mechanism obeys an
+	associated flow rule. When both mechanisms flow, their combined rate is a
+	positive combination of the outward normals to their yield surfaces, so it
+	is an outward normal to the full elastic domain where the surfaces meet.
+	The independent model remains associated.
 
-	For isotropic, cohesionless, monotone loading under compression, an exact
-	pressure-dependent specialization follows from a stress-dependent dissipation
-	potential and a dilatancy constraint.  Its small-strain limit recovers the
-	Drucker--Prager yield surface and a distinct plastic potential, with the
-	difference between the friction and dilation slopes supplied by dissipative
-	shear resistance.  Under the same proportional compressive loading, the
+	For an isotropic, cohesionless material under monotone compression, we use a
+	stress-dependent dissipation potential and a dilation constraint that give
+	both mechanisms one activation condition.  Its small-strain limit recovers
+	the Drucker--Prager yield surface together with a distinct plastic
+	potential. The dissipation sets the difference between the friction and
+	dilation slopes. Under the same proportional compressive loading, the
 	independent model stays at the stress point where both yield conditions are
-	active and accommodates the volume reduction by compaction.  The coupled
-	model instead moves along the Drucker--Prager surface while dilating.  The
-	construction carries to finite deformation under the Flory closure and
-	preserves nonnegative plastic dissipation.  The contribution is a
-	mechanism-resolved finite-deformation interpretation of this construction,
-	including its closure requirements and the consequences of independent or
-	shared activation.  Thus an associated
-	evolution law for the two underlying mechanisms becomes the familiar
-	non-associated flow rule when written only in terms of pressure and shear
-	stress.
+	active and accommodates the imposed volume reduction by compaction. The
+	coupled model instead moves along the Drucker--Prager surface while
+	dilating. The construction carries to finite deformation under the Flory
+	closure and preserves nonnegative plastic dissipation. A homogeneous
+	finite-deformation solution verifies the stress path, plastic volume change,
+	dissipation, and small-strain limit. In the coupled model, the plastic rate
+	is normal to the yield surface in generalized-force space when the pressure
+	is held fixed. The pressure dependence of the dissipative strength and the
+	dilation constraint then make the flow rule non-associated in the physical
+	stresses.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
 
-Frictional plasticity models commonly distinguish the surface that activates
-plastic loading from the potential that determines the plastic flow
-direction.  This distinction permits independent calibration of friction and
-dilation angles, but the resulting flow rule is not normal to a single yield
-surface in the usual stress variables.  Classical associated plasticity
-instead takes
-the plastic rate to be normal to the yield surface.  Drucker derived this
-structure from work-hardening and ideal-plasticity assumptions, and Bland
+Frictional materials change volume as they shear. Plasticity models for these
+materials commonly name one surface that activates plastic loading and a
+separate potential that sets the plastic flow direction.  This split permits
+independent calibration of friction and dilation angles, but the resulting flow
+rule is not normal to a single yield surface in the usual stress variables.
+Classical associated plasticity instead takes
+the plastic rate to be normal to the yield surface.  Drucker (1950) derived this
+structure from work-hardening and ideal-plasticity assumptions, and Bland (1957)
 showed its equivalence to a plastic potential identical to the yield function
-\cite{drucker1950,bland1957}.  Thus conventional frictional models use one
+\cite{drucker1950,bland1957}.  Conventional frictional models therefore use one
 function to activate plastic loading and another to prescribe the observed
 dilation rate, whereas classical associated plasticity requires a single
 function to serve both roles.
 
-Drucker and Prager introduced the pressure-dependent yield condition used here
-as the cohesionless reference model \cite{druckerprager1952}.  At finite strain,
+Drucker and Prager (1952) introduced the pressure-dependent yield condition that
+we use as the cohesionless reference model \cite{druckerprager1952}.  At finite strain,
 the multiplicative elastic--plastic split and its intermediate configuration
-are classical \cite{lee1969}, and maximum-plastic-dissipation formulations
-already connect that split, Mandel stress, and associated flow
-\cite{simo1988}.  Finite-strain pressure-sensitive models also combine
+are established modeling choices \cite{lee1969}, and maximum-plastic-dissipation
+formulations already connect that split, the Mandel stress, and associated flow
+\cite{simo1988}.  Finite-strain pressure-sensitive models likewise combine
 Mandel-type stresses with inelastic volume change and cap-type response
-\cite{bennett2019}.  The factorization used below must therefore be compared
-with this established volumetric--isochoric structure rather than treated as a
-new multiplicative kinematics.
+\cite{bennett2019}.  The distension factorization below must therefore be read
+against this established separation of volumetric and isochoric response. Where
+the microscopic mechanism is crystalline slip, Reina and Conti (2014) derive
+the split from the kinematics of slip in a two-dimensional construction
+\cite[Secs.~4 and 6]{reina2014}. For granular rearrangement and pore collapse,
+the factors remain constitutive assumptions, and their physical adequacy
+requires material-specific evidence.
 
-Thermodynamic formulations track each internal rate together with the force
-that does work through it.  Collins and Houlsby showed that an associated flow
-rule written in this larger set of forces can become non-associated after the
+To account for plastic work, a thermodynamic formulation pairs each internal
+rate with the force that acts through it.  Collins and Houlsby (1997) showed that an associated flow
+rule written in this larger set of forces can become non-associated once the
 internal forces are expressed through the usual stresses
-\cite[Sec.~5]{collins1997}.  They also gave a
+\cite[Sec.~5]{collins1997}.  Within that setting they also gave a
 stress-dependent dissipation construction for Drucker--Prager plasticity
 \cite[Sec.~5]{collins1997}.  Other convex, energy-based dissipation models
-also derive pressure-dependent non-associated flow
-\cite{srinivasa2010,ulloa2021}.  Independently, Drumheller's mixture kinematics
-split deformation into true deformation and distension, with elastic--plastic
-factors and distinct plastic powers for the two mechanisms
-\cite[Secs.~3 and 8]{drumheller2000}.  Combining these results assigns specific
-finite-deformation carriers to the pressure-dependent plastic rates: shear
-rearrangement changes the true deformation, whereas compaction or dilation
-changes distension.
+derive pressure-dependent non-associated flow in the same spirit
+\cite{srinivasa2010,ulloa2021}.  Separately, Drumheller's (2000) mixture kinematics
+split the deformation into true deformation and distension, with elastic--plastic
+factors and a distinct plastic power for each mechanism
+\cite[Secs.~3 and 8]{drumheller2000}.  The two constructions fit together: the
+shear rate of the Collins--Houlsby model becomes the isochoric plastic rate
+that changes true deformation, and its volumetric rate becomes the plastic
+distension.
 
-This paper uses Drumheller's terminology to identify explicit physical
-mechanisms within the Collins--Houlsby thermodynamic construction at finite
-deformation.  For a single solid phase, the split
-\(\mbf F=\mbf A\bar{\mbf F}\) assigns true-plastic deformation and plastic
-distension separate elastic--plastic factors and separate power-conjugate
-forces.  In the independent model, each mechanism has its own yield condition
-and plastic multiplier.  In the coupled model, a dilatancy constraint and a
-stress-dependent dissipation potential give both mechanisms one multiplier.
-This coupling produces the Drucker--Prager yield surface and a different
-plastic-potential slope.  For the closed finite-deformation model,
+We use Drumheller's terminology to give the rates in the Collins--Houlsby
+construction a finite-deformation interpretation.  For a single solid phase,
+the split \(\mbf F=\mbf A\bar{\mbf F}\) gives the isochoric plastic
+deformation and the plastic distension separate elastic--plastic factors and
+separate power-conjugate forces.  We consider two ways of combining them.  In
+the independent model, each mechanism has its own yield condition and plastic
+multiplier.  In the coupled model, a dilatancy constraint and a stress-dependent
+dissipation potential give both mechanisms one multiplier.
+This coupling produces the Drucker--Prager yield surface and, with it, a
+different plastic-potential slope.  For the closed finite-deformation model,
 the Flory constraint makes the resulting multiplicative split algebraically
-equivalent to the classical volumetric--isochoric split.  The small-strain
-dissipation construction is the Collins--Houlsby construction; the contribution
-developed here is its mechanism-resolved finite-deformation interpretation, the
-closure required by the distension variable, and the distinction between
-independent and shared activation.  This structure explains how associated
-flow for the mechanisms appears non-associated when written in terms of
-pressure and shear stress.
+equivalent to the classical volumetric--isochoric split.  At small strain, the
+dissipation construction is that of Collins and Houlsby.
 
-Section~\ref{sec:kinematics} defines the finite-deformation split and its
-closure, and Section~\ref{sec:thermodynamics} derives the conjugate forces and
-plastic power.  Section~\ref{sec:two_mechanisms} examines the associated
+The independent model remains associated with its full elastic domain. In the
+coupled model, the flow direction is normal to the yield surface in
+generalized-force space at fixed pressure, but non-associated in physical
+stress space. We also identify the stored energies that each model allows and
+give an exact homogeneous finite-deformation example.
+
+Section~\ref{sec:kinematics} defines the finite-deformation split and the
+closure that assigns deformation to its factors, and
+Section~\ref{sec:thermodynamics} derives the conjugate forces and plastic
+power.  Section~\ref{sec:two_mechanisms} examines the associated
 two-mechanism theory and its combined plastic strain rate.
 Section~\ref{sec:drucker_prager}
-constructs the exact small-strain pressure-dependent specialization, which
-Section~\ref{sec:finite_lift} extends to finite deformation.
+constructs the small-strain pressure-dependent specialization exactly, and
+Section~\ref{sec:finite_lift} extends it to finite deformation.
 
 \section{Single-phase kinematics}
 \label{sec:kinematics}
 
 Let \(\bs\varphi(\mbf X,t)\) map a material point \(\mbf X\) in the reference
-configuration to its current position \(\mbf x\).  The deformation gradient
+configuration to its current position \(\mbf x\) at time \(t\). The deformation gradient
 and its Jacobian are
 \begin{equation*}
 	\mbf F=\frac{\partial\bs\varphi}{\partial\mbf X},
 	\qquad
 	J=\det\mbf F>0.
 \end{equation*}
-The deformation is decomposed into distension and true deformation,
+A porous body can change volume through compression of its solid material
+and through changes in the space between solid regions. Drumheller's (2000)
+mixture kinematics distinguish these changes through true deformation and
+distension \cite[Secs.~3--4]{drumheller2000}. We adopt that distinction for a
+single solid phase and write
 \begin{equation}
 	\mbf F=\mbf A\bar{\mbf F},
 	\qquad
@@ -155,13 +171,30 @@ The deformation is decomposed into distension and true deformation,
 	\bar J=\det\bar{\mbf F}.
 	\label{eq:distension_split}
 \end{equation}
-The tensor \(\bar{\mbf F}\) describes deformation of the solid material,
-whereas \(\mbf A\) accounts for the surrounding volume assigned to it.
-This split is the single-phase specialization of the true-deformation and
-distension kinematics introduced for immiscible mixtures by Drumheller
-\cite[Secs.~3 and 8.2]{drumheller2000}.
+This factorization follows Drumheller's true-deformation and distension
+construction \cite[Secs.~3 and 8.2]{drumheller2000}. The two tensors describe
+successive local maps. First, the true-deformation tensor \(\bar{\mbf F}\) maps
+a reference material line element into an intermediate configuration that
+represents deformation of the solid material. The distension tensor \(\mbf A\)
+then maps that element from the intermediate configuration into the current
+spatial tangent space and accounts for the volume assigned to the material.
+The determinants \(a\) and \(\bar J\) therefore separate the two volumetric
+changes. Assigning a deformation to the two factors requires the closure
+developed below. The factors are local two-point maps, so global compatibility
+is an additional requirement.
 
-Each factor has an elastic--plastic split,
+The scalar quantity \(a\) has an established physical meaning in
+porous-compaction models. Herrmann's (1969) pressure--distension, or
+\(p\)--\(\alpha\), model distinguishes the bulk specific volume from the
+specific volume of the solid material \cite{herrmann1969}. Their ratio measures
+the extra volume associated with pores. Drumheller connects this classical
+scalar distension to the determinant of a distension gradient
+\cite[Sec.~4]{drumheller2000}. That connection motivates the volumetric
+interpretation of \(\mbf A\); its full tensorial form still requires a choice
+such as the isotropic restriction used here.
+
+Either factor can change elastically or plastically. Superscripts \(e\) and
+\(p\) denote elastic and plastic factors, respectively, in the splits
 \begin{subequations}
 	\label{eq:plastic_splits}
 	\begin{align}
@@ -174,8 +207,8 @@ Each factor has an elastic--plastic split,
 	\end{align}
 \end{subequations}
 The isochoric condition assigns all plastic volume change to \(\mbf A^p\).
-Drumheller's finite-deformation construction makes the same distinction: the
-true-plastic factor is incompressible, whereas the plastic-distension factor
+Drumheller's (2000) finite-deformation construction makes the same distinction: the
+plastic factor of true deformation is incompressible, whereas the plastic-distension factor
 may change volume
 \cite[eqs.~(71)--(74)]{drumheller2000}.
 
@@ -193,15 +226,21 @@ distension to be isotropic,
 		       & \zeta           & =\zeta^e+\zeta^p.
 	\end{aligned}
 \end{equation*}
-The velocity gradient consequently separates into the spherical distension
-rate and the true-deformation rate,
+Here \(\mbf I\) is the identity tensor, \(\zeta^e=\ln a^e\), and
+\(\zeta^p=\ln a^p\). A dot denotes a material time derivative. The velocity
+gradient then separates into a spherical distension rate and a
+true-deformation rate,
 \begin{equation}
 	\mbf L=\dot{\mbf F}\mbf F^{-1}
 	=\frac{\dot\zeta}{3}\mbf I
 	+\dot{\bar{\mbf F}}\bar{\mbf F}^{-1}.
 	\label{eq:velocity_gradient}
 \end{equation}
-The true-plastic velocity gradient is
+The split of \(\bar{\mbf F}\) introduces a second intermediate configuration:
+\(\bar{\mbf F}^{p}\) maps reference line elements into it, and
+\(\bar{\mbf F}^{e}\) maps them onward to the intermediate configuration of
+\eqref{eq:distension_split}. The isochoric plastic velocity gradient in this
+plastic intermediate configuration is
 \begin{equation*}
 	\bar{\mbf L}^{p}
 	=\dot{\bar{\mbf F}}^{p}(\bar{\mbf F}^{p})^{-1},
@@ -218,34 +257,52 @@ rate into its elastic and plastic parts,
 	\label{eq:true_rate_split}
 \end{equation}
 
+The plastic part of this rate reaches the current configuration as
+\(\bar{\mbf F}^e\bar{\mbf L}^p(\bar{\mbf F}^e)^{-1}\). It is therefore not the
+difference between \(\mbf L\) and the elastic true-deformation rate: that
+difference also retains the spherical distension rate \(\dot\zeta\mbf I/3\).
+For this reason, \(\bar{\mbf L}^{p}\) is the isochoric plastic velocity
+gradient in its intermediate configuration, not the plastic part of the
+spatial velocity gradient.
+
 \subsection{Closure of the kinematic split}
 \label{sec:kinematic_closure}
 
-The split in \eqref{eq:distension_split} is not determined by
-\(\mbf F\) alone.  Even for isotropic distension, \(J=a\bar J\) fixes only the
-product of the distension and true-deformation Jacobians.  The scalar \(a\)
-must therefore be supplied by an evolution equation or a kinematic constraint;
-once \(a\) is known, \(\mbf A=a^{1/3}\mbf I\) and
-\(\bar{\mbf F}=a^{-1/3}\mbf F\).  Its exact kinematic rate is
+The split in \eqref{eq:distension_split} requires a rule that assigns the
+total deformation to its factors. For isotropic distension, \(J=a\bar J\) fixes
+only the product of the distension and true-deformation Jacobians. The scalar
+\(a\) must therefore come from an evolution equation or a kinematic
+constraint. Once \(a\) is known, \(\mbf A=a^{1/3}\mbf I\) and
+\(\bar{\mbf F}=a^{-1/3}\mbf F\) follow. Jacobi's determinant identity applied
+to \(a=\det\mbf A\) gives the rate relation
 \begin{equation*}
 	\frac{\dot a}{a}
 	=\tr\left(\dot{\mbf A}\mbf A^{-1}\right).
 \end{equation*}
 
-In Drumheller's mixture theory, constituent mass balance relates this rate to
-the rates of volume fraction and mass exchange.  In the absence of mass
-exchange and for unit reference volume fraction, the distension is the inverse
-of the current volume fraction
-\cite[eq.~(36)]{drumheller2000}.  That relation provides
-a physical evolution law when the corresponding mixture variables are
-retained.  The present single-phase theory does not carry volume fraction or
-mass exchange, so an application must instead prescribe a constitutive
-evolution or constraint for \(a\).  The flow rule
-\eqref{eq:finite_distension_flow} later supplies the plastic rate
-\(\dot a^p/a^p\), but it does not by itself determine the total distension.
+In Drumheller's (2000) mixture theory, constituent mass balance relates this
+rate to the rates of volume fraction and mass exchange. Without mass exchange
+and for unit reference volume fraction, the distension is the inverse of the
+current volume fraction \cite[eq.~(36)]{drumheller2000}. If the factors are
+instead normalized to the identity in a porous reference state, \(a\) measures
+the ratio of the reference to current solid volume fractions. The difference
+between an absolute bulk-to-solid volume ratio and its reference-normalized
+change therefore matters when comparing with a \(p\)--\(\alpha\) model. Mass
+balance supplies the required connection whenever volume fraction is retained
+as a state variable, and a constitutive law then determines how that variable
+evolves.
 
-A standard Flory split into volumetric and shape-changing parts closes the model
-\cite{flory1961}.  Foster et al. obtain the same specialization from the
+The single-phase model here takes the simpler route. A kinematic constraint,
+introduced below, assigns the total volume change to distension, and the
+closure then determines both factors. The flow rule
+\eqref{eq:finite_distension_flow} supplies the plastic rate
+\(\dot a^p/a^p\). An independent microstructural interpretation of distension
+would instead need the energetic structure examined in
+Section~\ref{sec:energy_class}.
+
+We close the model by assigning the total volume change to distension and
+the remaining shape change to true deformation. This is the standard Flory split
+\cite{flory1961}.  Foster et al. (2026) obtain the same specialization from the
 distension split for incompressible solid phases
 \cite[Sec.~2, eq.~(17)]{foster2026reactingporous}:
 \begin{subequations}
@@ -261,15 +318,14 @@ distension split for incompressible solid phases
 \end{subequations}
 This choice determines both factors directly from \(\mbf F\).  Together with
 \eqref{eq:plastic_splits}, it also gives
-\(\det\bar{\mbf F}^{e}=\det\bar{\mbf F}^{p}=1\).  The deviatoric and
-volumetric plastic rates remain distinct, and each retains its own contribution
-to plastic power.  The interpretation is narrower:
-\(a^p\) is the conventional plastic volume ratio rather than an independent
-distension that can differ from the total volume change.
+\(\det\bar{\mbf F}^{e}=\det\bar{\mbf F}^{p}=1\).  Under this closure, \(a^p\)
+is the conventional plastic volume ratio.  The deviatoric and volumetric
+plastic rates remain distinct, and each keeps its own contribution to plastic
+power.
 
 The closed case also makes contact with conventional multiplicative
 plasticity.  Because the spherical factors commute with the true-deformation
-factors, define
+factors we can define
 \begin{equation*}
 	\mbf F^e=(a^e)^{1/3}\bar{\mbf F}^{e},
 	\qquad
@@ -279,26 +335,28 @@ factors, define
 	\qquad
 	\det\mbf F^p=a^p.
 \end{equation*}
-Thus the Flory-closed kinematics do not introduce an additional single-phase
-degree of freedom.  Their role is to identify the isochoric and volumetric
-parts of conventional plastic flow with true-plastic deformation and plastic
-distension.  An independently evolving distension is instead appropriate when
-a volume fraction, porosity, or another microstructural variable supplies the
-additional closure.  Such a model must supply its own evolution law for that
-variable; the closed model developed below does not need one.
+The Flory-closed kinematics therefore identify the conventional isochoric and
+volumetric plastic factors with isochoric plastic deformation and plastic
+distension. A porosity or volume-fraction model would require both a
+microstructural closure and compatible energetic forces.
+Section~\ref{sec:energy_class} derives that energetic requirement.
 
 \section{Free-energy restriction and plastic power}
 \label{sec:thermodynamics}
 
 Let \(\psi\) denote the isothermal Helmholtz free energy per unit reference
-volume.  For the preceding kinematics and the hardening variables
-\(\kappa_d\) and \(\kappa_v\), the model takes
+volume.  The energy depends on the two elastic factors and on one hardening
+variable for each mechanism, \(\kappa_d\) for isochoric plastic deformation and
+\(\kappa_v\) for distension.  The model therefore takes
 \begin{equation*}
 	\psi=\psi
 	\left(
 	\bar{\mbf F}^{e},\zeta^e,\kappa_d,\kappa_v
 	\right).
 \end{equation*}
+The Kirchhoff stress is \(\bs\tau=\mbf P\mbf F^T=J\bs\sigma\),
+where \(\mbf P\) and \(\bs\sigma\) are the first Piola and Cauchy
+stresses, respectively.
 Material frame indifference requires the free energy to remain unchanged when
 \(\bar{\mbf F}^{e}\) is subjected to a rigid rotation, and angular-momentum balance
 makes \(\bs\tau\) symmetric.  The pressure-dependent specialization below
@@ -309,10 +367,10 @@ stress is symmetric.  The local free-energy inequality is
 	=\mbf P:\dot{\mbf F}-\dot\psi
 	\ge 0,
 \end{equation*}
-where \(\mbf P\) is the first Piola stress.  With the Kirchhoff stress
-\(\bs\tau=\mbf P\mbf F^T\), equations \eqref{eq:velocity_gradient} and
-\eqref{eq:true_rate_split} separate the mechanical power into distension,
-elastic true-deformation, and true-plastic contributions,
+where \(\mathcal D\) is power per unit reference volume, and
+\eqref{eq:velocity_gradient} and \eqref{eq:true_rate_split} separate the
+mechanical power into distension, elastic true-deformation, and isochoric
+plastic contributions,
 \begin{equation*}
 	\mbf P:\dot{\mbf F}
 	=\left[\bs\tau(\bar{\mbf F}^{e})^{-T}\right]:\dot{\bar{\mbf F}}^{e}
@@ -353,8 +411,8 @@ free-energy inequality,
 \end{align}
 For the general distension split, we first take \(a\) as an independent
 kinematic variable.  Its scalar rate and the elastic true-deformation rate can
-therefore vary independently.  Their coefficients
-in \eqref{eq:collected_free_energy_inequality} therefore vanish, giving the
+therefore vary independently. Their coefficients
+in \eqref{eq:collected_free_energy_inequality} must vanish, giving the
 reversible restrictions
 \begin{subequations}
 	\label{eq:reversible_restrictions}
@@ -367,26 +425,68 @@ reversible restrictions
 		\label{eq:distension_stress_restriction}
 	\end{align}
 \end{subequations}
-Under the Flory closure \eqref{eq:flory_closure}, the admissible elastic
-process directions instead separate into the scalar volumetric rate and
-isochoric variations satisfying
-\(\tr[\dot{\bar{\mbf F}}^e(\bar{\mbf F}^e)^{-1}]=0\).  The resulting
-restriction on the deviatoric stress response is
-\begin{equation*}
+\subsection{Admissible energy class and closure}
+\label{sec:energy_class}
+
+We first ask whether the two factors can store energy independently. If their
+elastic rates can vary independently and no other microstructural power enters
+the balance, both relations in \eqref{eq:reversible_restrictions} must hold.
+Contracting the first with \(\bar{\mbf F}^e\) and using the second gives
+\begin{equation}
+ \frac{\partial\psi}{\partial\bar{\mbf F}^e}:\bar{\mbf F}^e
+ =3\frac{\partial\psi}{\partial\zeta^e}.
+ \label{eq:energy_scaling_identity}
+\end{equation}
+For any scalar \(c\), increasing one factor while decreasing the other by
+the corresponding amount leaves the energy unchanged:
+\begin{align}
+ \frac{d}{dc}\psi\left(e^c\bar{\mbf F}^e,\zeta^e-3c,\kappa_d,\kappa_v\right)
+ &=0, \label{eq:energy_scaling_invariance}\\
+ \psi\left(\bar{\mbf F}^e,\zeta^e,\kappa_d,\kappa_v\right)
+ &=\widehat\psi\left(e^{\zeta^e/3}\bar{\mbf F}^e,\kappa_d,\kappa_v\right).
+ \label{eq:energy_class}
+\end{align}
+The second statement follows by taking \(c=\zeta^e/3\) in the first;
+\(\widehat\psi\) is the same energy expressed through the combined elastic
+factor. Compensating rescaling of the two factors therefore leaves the energy
+unchanged. An independently energetic distension cannot be obtained from this
+power balance: it requires additional terms in the balance and the conjugate
+forces those terms imply. A physical porosity, for example, needs its own state
+variable, thermodynamic force, and balance or evolution law, and that force
+must carry the stored microstructural energy in addition to pressure work.
+
+Under the Flory closure \eqref{eq:flory_closure}, elastic volume change is
+carried by distension. Variations of the elastic true-deformation factor must
+preserve volume and therefore satisfy
+\(\tr[\dot{\bar{\mbf F}}^e(\bar{\mbf F}^e)^{-1}]=0\).  With \(\dev\) denoting
+the deviatoric part, the resulting restriction on the stress response is
+\begin{equation}
 	\dev\left[
 		\left(
 		\bs\tau(\bar{\mbf F}^{e})^{-T}
 		-\frac{\partial\psi}{\partial\bar{\mbf F}^{e}}
 		\right)(\bar{\mbf F}^{e})^T
 		\right]=\mbf0.
-\end{equation*}
-Equation~\eqref{eq:distension_stress_restriction} determines the spherical
-response.  These are the restrictions used by the closed finite-deformation
-specialization.  The residual plastic power is unchanged because
-\(\bar{\mbf L}^{p}\) is traceless.
+ \label{eq:flory_projected_restriction}
+\end{equation}
+This projected condition is the alternative to imposing the full tensor
+relation. It is all that the admissible variations require: if the energy is
+also defined for elastic true deformations that change volume, its derivative
+at the permitted isochoric states need satisfy only this deviatoric condition.
+Imposing the full stress relation \eqref{eq:true_stress_restriction} instead
+makes the bracket vanish, so the deviatoric condition then holds
+automatically. Equation~\eqref{eq:distension_stress_restriction} determines the
+spherical response in this constrained derivation. We use these conditions for
+the closed finite-deformation model. The remaining plastic power is unchanged
+because \(\bar{\mbf L}^{p}\) is traceless.
 
-The compression-positive mean Kirchhoff stress, deviatoric true-plastic
-driving stress, and hardening forces are
+Throughout the finite-deformation formulas, \(p\) is the compression-positive
+Kirchhoff pressure. The corresponding Cauchy pressure is
+\(-\tr\bs\sigma/3=p/J\). Plastic dissipation
+\(\mathcal D^p\) is power per reference volume; division by \(J\) gives the rate
+per current volume. Both rates have units of stress per time.
+The compression-positive mean Kirchhoff stress, the deviatoric stress that
+drives isochoric plastic flow, and the hardening forces are
 \begin{align*}
 	p      & =-\frac{1}{3}\tr\bs\tau,
 	\\
@@ -414,16 +514,17 @@ contributes to plastic power.  The deviatoric stress \(\mbf M\) is conjugate
 to the isochoric rate \(\bar{\mbf L}^{p}\), whereas \(-p\) is conjugate to the
 logarithmic plastic-distension rate
 \(\dot\zeta^p=\dot a^p/a^p\).  These powers are the single-phase counterparts
-of the true-plastic and plastic-distension powers in Drumheller's constitutive
+of the plastic true-deformation and plastic-distension powers in Drumheller's constitutive
 theory
 \cite[eqs.~(108)--(112)]{drumheller2000}.
 
 \section{Independent mechanisms and their combined response}
 \label{sec:two_mechanisms}
 
-The analysis first considers two independent rate-independent mechanisms.  Their
-equivalent true-plastic stress \(q\) and equivalent true-plastic strain rate
-\(\dot\gamma\) are
+We first allow shape change and volume change to start and evolve
+independently. For the isochoric mechanism, the equivalent stress \(q\) and the
+equivalent plastic strain rate \(\dot\gamma\) are, using the Frobenius norm
+\(\lVert\cdot\rVert\),
 \begin{equation}
 	q=\sqrt{\frac{3}{2}}\lVert\mbf M\rVert,
 	\qquad
@@ -431,8 +532,7 @@ equivalent true-plastic stress \(q\) and equivalent true-plastic strain rate
 	\lVert\bar{\mbf L}^{p}\rVert.
 	\label{eq:equivalent_quantities}
 \end{equation}
-The active true-plastic flow developed here is restricted to \(q>0\), for
-which the normal is unique and
+We consider isochoric plastic flow for \(q>0\), where the normal is unique:
 \begin{equation}
 	\mbf N=\frac{3}{2}\frac{\mbf M}{q},
 	\qquad
@@ -447,17 +547,17 @@ its normalization makes \(\dot\gamma\) agree with
 \(\mbf N\) to be symmetric, which sets the plastic spin to zero in the
 intermediate configuration.
 
-True-plastic deformation and distension may yield independently.  The elastic
-range is defined by the two conditions
+Isochoric plastic deformation and plastic distension may yield
+independently.  The elastic range is defined by the two conditions
 \begin{align*}
 	f_d(q,\kappa_d)  & =q-Y(\kappa_d)\le0,
 	\\
 	f_v(-p,\kappa_v) & =|p|-K(\kappa_v)\le0,
 \end{align*}
-where \(Y\ge0\) and \(K\ge0\) are the true-plastic and distension yield
-strengths, respectively.  On smooth portions of these surfaces, the model
-postulates the associated flow rules and hardening laws for the two mechanisms
-as
+where \(Y\ge0\) is the yield strength for isochoric plastic deformation and
+\(K\ge0\) is the yield strength for plastic distension.  On smooth portions of
+these surfaces, the model postulates associated flow rules and hardening laws
+for the two mechanisms,
 \begin{subequations}
 	\label{eq:product_flow_rules}
 	\begin{align}
@@ -473,7 +573,9 @@ as
 		\label{eq:distension_associated_flow}
 	\end{align}
 \end{subequations}
-with \(h_d,h_v\ge0\).  Each plastic multiplier satisfies the Kuhn--Tucker
+where \(\dot\lambda_d\) and \(\dot\lambda_v\) are plastic multiplier rates,
+and \(h_d,h_v\ge0\) determine the corresponding hardening rates. Each plastic
+multiplier rate satisfies the Karush--Kuhn--Tucker
 conditions
 \begin{equation*}
 	\dot\lambda_i\ge0,
@@ -484,7 +586,7 @@ conditions
 	\qquad
 	i\in\{d,v\}.
 \end{equation*}
-Active loading also requires consistency,
+During plastic loading, the stress must remain on the yield surface:
 \begin{equation}
 	\dot f_i=0
 	\quad\text{when}\quad
@@ -494,8 +596,8 @@ Active loading also requires consistency,
 	\label{eq:consistency}
 \end{equation}
 Together with the stress update and the hardening laws in
-\eqref{eq:product_flow_rules}, these conditions determine the active
-multipliers.
+\eqref{eq:product_flow_rules}, these conditions determine the plastic
+multipliers during loading.
 
 Energetic hardening contributes directly to the dissipation inequality.  The
 active conditions and \eqref{eq:product_flow_rules} give
@@ -517,30 +619,32 @@ active conditions and \eqref{eq:product_flow_rules} give
 The restrictions \eqref{eq:true_hardening_restriction} and
 \eqref{eq:distension_hardening_restriction} are sufficient for
 \eqref{eq:hardening_dissipation} because the mechanisms activate independently.
-A purely dissipative hardening specialization takes
+For purely dissipative hardening, we take
 \(Q_d=Q_v=0\) whenever \(h_d,h_v>0\), so the hardening variables change the
-yield strengths without storing energy.  It reduces the preceding result to
+yield strengths without storing energy.  The dissipation then reduces to
 \begin{equation*}
 	\mathcal D^p
 	=Y\dot\lambda_d+K\dot\lambda_v
 	\ge0.
 \end{equation*}
-More general energetic hardening is admissible when
+Hardening can also store energy, provided that
 \eqref{eq:true_hardening_restriction} and
 \eqref{eq:distension_hardening_restriction} hold.
 
-The two independent mechanisms can appear non-associated when they are viewed
-only through the total plastic strain rate.  At small strain,
-\eqref{eq:velocity_gradient} separates this rate into a traceless true-plastic part and a spherical
-plastic-distension part.  Let \(\dot{\bs\varepsilon}^{p}_{d}\) denote the
-former.  Since \(\dot\zeta^p\) is the plastic volumetric strain rate, its
-spherical contribution is \(\dot\zeta^p\mbf I/3\), and hence
-\begin{equation}
+When both mechanisms flow, each contributes its own normal direction. Viewed
+through the total plastic strain rate, their combined flow can appear
+non-associated with either individual yield surface, although it remains
+associated with the complete elastic domain. At small strain,
+\eqref{eq:velocity_gradient} separates this rate into a traceless isochoric
+plastic part and a spherical plastic-distension part.  Let
+\(\dot{\bs\varepsilon}^{p}_{d}\) denote the former.  Since \(\dot\zeta^p\) is
+the plastic volumetric strain rate, its spherical contribution is
+\(\dot\zeta^p\mbf I/3\), and hence
+\begin{equation*}
 	\dot{\bs\varepsilon}^{p}
 	=\dot{\bs\varepsilon}^{p}_{d}
 	+\frac{1}{3}\dot\zeta^p\mbf I.
-	\label{eq:observable_plastic_rate}
-\end{equation}
+\end{equation*}
 When both mechanisms are active, the associated flow rules
 \eqref{eq:product_flow_rules} give
 \begin{equation*}
@@ -549,42 +653,51 @@ When both mechanisms are active, the associated flow rules
 	+\frac{\dot\lambda_v}{3}
 	\frac{\partial f_v}{\partial(-p)}\mbf I.
 \end{equation*}
-The second term adds volume change to the isochoric flow.  This added part does
-not point normal to the shear yield surface \(f_d=0\).  A model that keeps this
-surface but uses the total rate \eqref{eq:observable_plastic_rate} therefore
-appears non-associated.
+The second term adds volume change to the isochoric flow. This added part does
+not point normal to the shear yield surface \(f_d=0\). At a fixed hardening
+state, however, the elastic domain is the intersection \(f_d\le0\) and
+\(f_v\le0\). The combined plastic rate is a nonnegative sum of the outward
+normals to the yield surfaces that are active, and such sums are outward
+normals of the complete domain, including at a corner. Together with the zero
+rate they form the normal cone of that domain, so the combined flow is
+associated with the complete domain. The apparent non-association with either
+individual surface is therefore different from non-association relative to a
+single physical-stress yield surface.
 
 Two independent yield conditions generally cannot be replaced by one
 non-associated yield surface.  When both mechanisms are active,
 \(f_d=0\) and \(f_v=0\) impose two equations, whereas a regular one-surface
 model imposes only one.  In addition,
 \eqref{eq:consistency} determines \(\dot\lambda_d\) and \(\dot\lambda_v\)
-through separate consistency equations without generally fixing the multiplier
-ratio required by a chosen plastic potential.  Exact equivalence therefore
-requires a shared activation condition or an explicit constitutive coupling.
+through separate consistency equations, and those equations do not generally
+fix the multiplier ratio that a chosen plastic potential would require.  Exact
+equivalence therefore requires a shared activation condition or an explicit
+constitutive coupling.
 
-The possible loading cases show the difference without requiring a particular
-elastic law.  At \(f_d=0\) and \(f_v<0\), the independent model permits
-isochoric true-plastic flow with \(\dot\zeta^p=0\); at \(f_v=0\) and
-\(f_d<0\), it permits purely volumetric plastic flow.  At the intersection,
-the two consistency equations determine separate multipliers and do not fix a
-universal ratio.  The coupled model below replaces these three possibilities
-with one active surface and the fixed ratio
-\(\dot\zeta^p/\dot\gamma=\beta\).  Coupling therefore fixes how much volume
-change accompanies a given amount of isochoric plastic flow.
+The loading cases show this difference without specifying an elastic law.  At
+\(f_d=0\) and \(f_v<0\), the independent model permits isochoric plastic flow
+with \(\dot\zeta^p=0\); at \(f_v=0\) and \(f_d<0\), it permits purely
+volumetric plastic flow.  Where the surfaces meet, the two consistency
+equations determine separate multipliers whose ratio is not fixed in advance.
+In the coupled model below, the mechanisms share one yield surface and the
+fixed ratio \(\dot\zeta^p/\dot\gamma=\beta\), where \(\beta\) is the dilation
+slope. Coupling therefore fixes how much volume change accompanies a given
+amount of isochoric plastic flow.
 
-The plastic power imposes a further restriction.  Under compression \(p>0\),
-dilation has \(\dot\zeta^p>0\), and its contribution
-\(-p\dot\zeta^p\) in \eqref{eq:plastic_dissipation} is negative.  Requiring
-the distension term alone to be nonnegative permits compaction under
-compression but rules out dilation.  A dilating frictional material instead
-uses part of the positive isochoric plastic power to offset the negative
-volumetric contribution.
+The energy balance also constrains how the mechanisms can combine. Under
+compression \(p>0\), dilation has \(\dot\zeta^p>0\), so its contribution
+\(-p\dot\zeta^p\) in \eqref{eq:plastic_dissipation} is negative.  If the
+distension term alone had to be nonnegative, plastic distension could compact
+the material under compression but could not dilate it.  A dilating frictional
+material instead draws on part of the positive isochoric plastic power to pay
+for the volume increase.
 
 \section{Coupled mechanisms and Drucker--Prager plasticity}
 \label{sec:drucker_prager}
 
-At small strain, the finite-deformation quantities reduce to
+We now connect the two mechanisms to the familiar small-strain
+Drucker--Prager model. At small strain, the finite-deformation quantities
+reduce to
 \begin{equation}
 	\bs\tau=J\bs\sigma\longrightarrow\bs\sigma,
 	\qquad
@@ -604,15 +717,17 @@ limits in \eqref{eq:small_strain_limit} therefore reduce
 	\mathcal D^p=q\dot\gamma-p\dot\zeta^p.
 	\label{eq:small_strain_power}
 \end{equation}
-The specialization adopts compression as positive and restricts the response to
-\(p\ge0\) and \(\dot\gamma\ge0\).  Dilatancy then supplies the kinematic constraint
+We take compression as positive and restrict the response to \(p\ge0\) and
+\(\dot\gamma\ge0\). Plastic dilation is prescribed in proportion to plastic
+shear,
 \begin{equation*}
 	\dot\zeta^p=\beta\dot\gamma,
 	\qquad
 	\beta\ge0.
 \end{equation*}
-Here, \(\beta\) is the dilation slope.  The following dissipation potential
-specifies both the allowed rate pairs and the energy they dissipate:
+This proportional rate relation is an imposed constitutive constraint that
+couples the two plastic rates. The dissipation potential below specifies both
+the admissible rate pairs and the power they dissipate:
 \begin{equation}
 	\mathcal R(p;\dot\gamma,\dot\zeta^p)
 	=
@@ -625,18 +740,21 @@ specifies both the allowed rate pairs and the energy they dissipate:
 	\qquad \mu\ge0,
 	\label{eq:dissipation_potential}
 \end{equation}
-The potential is convex and positively homogeneous.  It includes zero plastic
-flow and assigns infinite cost to rate pairs that violate the dilation rule.
+Here \(\mu\) is a dimensionless resistance coefficient, and \(\mu p\) is the
+dissipative strength at pressure \(p\). For each fixed \(p\ge0\), the potential
+is convex and positively homogeneous in the rates. It permits zero plastic flow
+and assigns infinite cost to rate pairs that violate the dilation rule.
 This construction adapts the
 stress-dependent dissipation and dilation constraint used by Collins and
-Houlsby in their Drucker--Prager example
+Houlsby (1997) in their Drucker--Prager example
 \cite[eqs.~(5.8)--(5.14)]{collins1997}.
 
-To determine the elastic range, hold \(p\) fixed.  Let \(\chi_q\) and \(\chi_v\)
+To find the range of forces that produces no plastic flow, we hold the
+pressure \(p\) fixed. Let \(\chi_q\) and \(\chi_v\)
 denote the generalized thermodynamic forces conjugate to \(\dot\gamma\) and
 \(\dot\zeta^p\), respectively.  Because the conjugate rates are strain-like,
-these scalar forces have units of stress and are the reduced counterparts of
-the generalized stresses used by Collins and Houlsby
+these scalar forces have units of stress, and they are the reduced
+counterparts of the generalized stresses used by Collins and Houlsby (1997)
 \cite[eqs.~(2.10)--(2.11) and (5.11)--(5.13)]{collins1997}.
 At zero plastic rate, admissible forces cannot perform more work through any
 rate pair than the dissipation potential assigns to that pair.  Therefore,
@@ -673,8 +791,14 @@ loading conditions,
 	\end{gathered}
 	\label{eq:generalized_loading_conditions}
 \end{equation}
-The coupled rate is therefore normal to the boundary in the reduced
-generalized-force space \((\chi_q,\chi_v)\) when \(p\) is held fixed.
+The scalar \(\dot\lambda\) is the common plastic multiplier rate for the
+coupled mechanisms.
+At fixed pressure, the coupled rate is normal to this boundary in the
+generalized-force space \((\chi_q,\chi_v)\). During plastic loading the
+pressure can change, and the forces must remain on the corresponding yield
+boundary. The condition \(\dot f_g=0\) therefore accounts for changes in both
+the forces and the pressure. As shown below, the resulting flow direction need
+not be normal to the yield surface expressed in physical stresses.
 
 For the cohesionless model without kinematic hardening, the conjugate forces
 coincide with those in the physical power \eqref{eq:small_strain_power},
@@ -691,9 +815,8 @@ terms of pressure and equivalent shear stress,
 	\qquad
 	M=\mu+\beta.
 \end{equation*}
-The generalized forces therefore coincide with the physical stress invariants
-through \(\chi_q=q\) and \(\chi_v=-p\).  After this substitution, the yield
-surface has volumetric slope \(M=\mu+\beta\), whereas the plastic rate in
+After this substitution the yield surface has volumetric slope
+\(M=\mu+\beta\), whereas the plastic rate in
 \eqref{eq:generalized_loading_conditions} has volumetric slope \(\beta\).
 Written directly in terms of pressure and equivalent shear stress, the plastic
 rate therefore follows from the potential
@@ -726,77 +849,72 @@ For \(q>0\), substitution into \eqref{eq:plastic_potential} gives
 \end{equation*}
 Normality to \(f=0\) would give the volumetric coefficient \(M\), whereas the
 actual coefficient is \(\beta\).  Because \(M=\mu+\beta\), the flow is
-non-associated whenever \(\mu>0\).
+non-associated whenever \(\mu>0\). Increasing the pressure increases the
+dissipative strength \(\mu p\), which adds \(\mu\) to the slope of the
+physical yield surface. The flow direction in generalized-force space is found
+at fixed pressure, so it does not contain that change in strength. Its
+volumetric coefficient is therefore \(\beta\).
 
 The dissipation now follows directly from the active surface and the
 dilatancy constraint,
-\begin{align}
+\begin{align*}
 	\mathcal D^p
 	 & =q\dot\gamma-p\dot\zeta^p
-	\notag                              \\
+	                              \\
 	 & =\left(M-\beta\right)p\dot\gamma
-	\notag                              \\
+	                              \\
 	 & =\mu p\dot\gamma
 	\ge0.
-	\label{eq:drucker_prager_dissipation}
-\end{align}
+\end{align*}
 Thus the frictional strength separates into the dilation slope \(\beta\) and
 the part \(\mu\) that produces dissipation.  For \(\mu=0\), the flow is
 associated and this idealized rate-independent mechanism dissipates no power.
-Collins and Houlsby obtain the same separation in their stress-dependent
+Collins and Houlsby (1997) obtain the same separation in their stress-dependent
 dissipation construction \cite[eq.~(5.14)]{collins1997}.
 
-For \(p\ge0\), \(\dot\gamma\ge0\), and constants \(\mu,\beta\ge0\), this
-construction gives the Drucker--Prager model exactly.  The zero-rate work
-inequality gives the admissible force region in
-\eqref{eq:generalized_yield}.  Substituting the physical forces from
-\eqref{eq:true_force_identification} gives the yield slope
-\(M=\mu+\beta\), while associated flow in the two-force description gives the
-dilation slope \(\beta\).  Substitution into the plastic power gives
-\eqref{eq:drucker_prager_dissipation}.  The yield and flow slopes differ when
-\(\mu=M-\beta>0\), which is precisely the non-associated case.
-
-The exact equivalence applies to an isotropic material when the true-plastic
-rate remains aligned with its driving stress, loading is monotone with
+The exact equivalence applies to an isotropic material when the isochoric
+plastic rate remains aligned with its driving stress, loading is monotone with
 \(p\ge0\) and \(\dot\gamma\ge0\), \(\mu\) and \(\beta\) are constant, and
 cohesion and back stress are zero.  Cohesion and hardening can be introduced by
 replacing \(\mu p\) with a nonnegative state-dependent strength and prescribing
 its evolution.  Changes in loading direction, corners, cyclic reversal, and
 anisotropy require a rate potential that specifies the tensor direction and
-rules that determine which yield condition is active.  These requirements
-distinguish the coupled model from the model with separate yield conditions in
-Section~\ref{sec:two_mechanisms}.
+rules that determine which yield condition is active.  These requirements are
+what distinguish the coupled model from the model with separate yield
+conditions in Section~\ref{sec:two_mechanisms}.
+
+
 
 \subsection{Relation to prior dissipation formulations}
 \label{sec:prior_dissipation}
 
-Previous work has already derived non-associated Drucker--Prager flow from
-dissipation principles.  Collins and Houlsby impose the same linear dilation
+Collins and Houlsby (1997) derived non-associated Drucker--Prager flow from
+a dissipation principle. They impose the same linear dilation
 constraint and stress-dependent dissipation used in
-\eqref{eq:dissipation_potential}, obtaining the same separation
+\eqref{eq:dissipation_potential} and obtain the same separation
 \(M=\mu+\beta\) \cite[Sec.~5]{collins1997}.  Equations
 \eqref{eq:zero_rate_force_condition}--\eqref{eq:true_force_identification}
-state the admissible forces at zero plastic rate and then substitute pressure
-for the volumetric driving force.  They do not define a different small-strain
-constitutive law.
+state the admissible forces at zero plastic rate and then replace the
+volumetric driving force by minus the pressure. This gives the same
+small-strain constitutive law, written so that the power carried by each
+mechanism is explicit.
 
 The term \emph{coupled mechanisms} used here refers to a common activation
 condition and plastic multiplier for the isochoric and volumetric mechanisms.
 It is distinct from Collins and Houlsby's elastic--plastic coupling through the
 thermodynamic potential \cite[Sec.~3]{collins1997}.
 
-Srinivasa instead lets the dissipation function determine both the yield
+Srinivasa (2010) instead lets the dissipation function determine both the yield
 surface and the non-associated flow direction, without imposing a separate
-dilation constraint \cite{srinivasa2010}.  Ulloa et al. derive
+dilation constraint \cite{srinivasa2010}.  Ulloa et al. (2021) derive
 non-associated flow from stored energy and a state-dependent dissipation
 potential; their approach also includes hardening and more general
-non-associated models \cite{ulloa2021}.  The present construction is narrower
-than those approaches.  It assigns the shear and volume rates to distinct
-true-plastic and distension factors, makes the closure requirement explicit,
-compares independent activation with a shared-multiplier response, and carries
-that mechanism-resolved interpretation to finite deformation.  Under the Flory
-closure, these factors are the conventional isochoric and volumetric plastic
-factors rather than additional degrees of freedom.
+non-associated models \cite{ulloa2021}.  The present construction assigns the
+shear and volume rates to distinct isochoric plastic and distension factors and
+makes the closure requirement explicit. It compares independent activation
+with a shared-multiplier response and carries that mechanism-resolved
+interpretation to finite deformation.  Under the Flory closure, the two factors
+are the conventional isochoric and volumetric plastic factors.
 
 \subsection{Proportional loading comparison}
 \label{sec:loading_comparison}
@@ -839,22 +957,24 @@ Consistency of both active surfaces therefore gives
 	\qquad
 	\dot\zeta^p=-\dot\varepsilon_v<0.
 \end{equation*}
-The independent response remains at the corner and accommodates the imposed
-volume reduction by plastic compaction.
+The independent response remains at the corner: shear produces isochoric
+plastic flow, while the imposed volume reduction produces plastic compaction.
 
 For the coupled model, \(\dot\zeta^p=\beta\dot\lambda\), and the stress rates
 under the same imposed path are
-\begin{equation*}
+\begin{equation}
 	\dot q=3G(\dot\varepsilon_s-\dot\lambda),
 	\qquad
 	\dot p=K_e(\dot\varepsilon_v+\beta\dot\lambda).
-\end{equation*}
+\label{eq:coupled_stress_rates}
+\end{equation}
 Consistency of \(q-Mp=0\) gives
-\begin{equation*}
+\begin{equation}
 	\dot\lambda
 	=\frac{3G\dot\varepsilon_s-MK_e\dot\varepsilon_v}
 	{3G+MK_e\beta}.
-\end{equation*}
+\label{eq:coupled_multiplier}
+\end{equation}
 For \(\beta>0\) and
 \(3G\dot\varepsilon_s>MK_e\dot\varepsilon_v\), the multiplier is positive,
 \(\dot\zeta^p=\beta\dot\lambda>0\), and
@@ -862,30 +982,38 @@ For \(\beta>0\) and
 Drucker--Prager surface while dilating, whereas the independent response under
 the same loading remains at its two-surface corner while compacting.
 
-This comparison also identifies the material behavior represented by each
-construction.  The coupled model is appropriate when shear rearrangement causes
-plastic volume expansion, as in the shear dilation of a dense frictional
-granular material.  The independent model is appropriate when volume change has
-its own activation process, as in pore collapse or grain crushing.  A material
-that exhibits both shear dilation and pressure-driven compaction would generally
-require a coupled shear-dilation mechanism together with a separate compaction
-mechanism.
+This comparison identifies the material behavior that each model represents.
+The coupled model is appropriate when shear rearrangement causes plastic volume
+expansion, as in the shear dilation of a dense frictional granular material.
+The independent model is appropriate when volume change has its own activation
+process, as in pore collapse or grain crushing.  A material that exhibits both
+shear dilation and pressure-driven compaction would generally require a coupled
+shear-dilation mechanism together with a separate compaction mechanism.
 
 \section{Finite-deformation extension}
 \label{sec:finite_lift}
 
-The same stresses and internal rates that form the plastic power in
-\eqref{eq:plastic_dissipation} also define the finite-deformation model.  This section adopts
-the Flory closure \eqref{eq:flory_closure}; thus \(a=J\),
-\(\bar J=1\), and \(a^e=J/a^p\) are determined from the imposed deformation
-and the plastic state.  For this specialization, the model neglects energetic
-hardening.  Active flow is restricted to \(q>0\), and the normal is
+We now extend the coupled model to finite deformation using the stresses and
+rates that contribute to plastic power in
+\eqref{eq:plastic_dissipation}.  This section adopts
+the Flory closure \eqref{eq:flory_closure}, so \(a=J\),
+\(\bar J=1\), and \(a^e=J/a^p\) follow from the imposed deformation
+and the plastic state.  The specialization neglects energetic hardening.
+Active flow is restricted to \(q>0\), where the normal is unique:
 \begin{equation}
 	q=\sqrt{\frac{3}{2}}\lVert\mbf M\rVert,
 	\qquad
 	\mbf N=\frac{3}{2}\frac{\mbf M}{q}.
 	\label{eq:finite_equivalent_stress}
 \end{equation}
+Because this normal is divided by \(q\), plastic loading must begin from a
+state with \(q>0\). The stress-free state has \(q=0\), so an elastic preload is
+needed before the flow direction can be evaluated. A hydrostatic elastic
+compression first enters \(p>0\), \(q=0\), \(f<0\); elastic shear then brings
+the stress to the smooth surface at \(q=Mp>0\). The worked example below
+follows this elastic-preload route. Plastic loading directly from the apex
+requires a separate nonsmooth treatment.
+
 The two internal mechanisms then evolve according to
 \begin{subequations}
 	\label{eq:finite_flow_rules}
@@ -941,92 +1069,231 @@ gives
 The dissipation proof pairs each internal rate with the stress that does work
 through it.  The finite-deformation yield surface is therefore a
 Drucker--Prager-type condition in \((p,q)\), with \(p\) formed from the
-Kirchhoff stress and \(q\) from the Mandel-type true-plastic stress.  This
-surface reduces to the conventional Cauchy-stress form at small strain.  At
-finite strain, a particular Drucker--Prager implementation must express its
-chosen stress measure and stress update in terms of \(\mbf M\) and \(p\) before
-the two formulations can be compared.
+Kirchhoff stress and \(q\) from the Mandel-type stress that drives isochoric
+plastic flow.  At small strain this surface reduces to the conventional
+Cauchy-stress form.  At finite strain, a particular Drucker--Prager
+implementation must express its chosen stress measure and stress update in
+terms of \(\mbf M\) and \(p\) before the two formulations can be compared.
 
-The same associated-flow argument applies at finite deformation when pressure
-is held fixed.  With the generalized thermodynamic forces \(\chi_q\) and
-\(\chi_v\) conjugate to \(\dot\gamma\) and \(\dot\zeta^p\), the
-admissible-force boundary, the physical stress invariants, and the plastic
-rates are
-\begin{equation*}
-	\chi_q+\beta\chi_v-\mu p=0,
-	\qquad
-	\chi_q=q,
-	\qquad
-	\chi_v=-p,
-	\qquad
-	(\dot\gamma,\dot\zeta^p)=\dot\lambda(1,\beta).
-\end{equation*}
-Substituting \(\chi_q=q\) and \(\chi_v=-p\) gives
-\eqref{eq:finite_loading_conditions}, while the plastic rate retains the
-dilation slope \(\beta\).  Thus the model is associated in the two driving
-forces but non-associated when written in terms of \((p,q)\) whenever
-\(\mu>0\).
+\subsection{Exact homogeneous compressive-loading example}
+\label{sec:finite_example}
+
+We check the model on a specimen that deforms uniformly, with its principal
+directions fixed throughout loading. We assume no hardening and choose the
+following objective isotropic elastic energy per reference volume
+\begin{equation}
+ \psi=G\left\|\tfrac12\log\left[(\bar{\mbf F}^e)^T
+ \bar{\mbf F}^e\right]\right\|^2+\frac{K_e}{2}(\zeta^e)^2,
+ \qquad \det\bar{\mbf F}^e=1.
+ \label{eq:example_energy}
+\end{equation}
+The matrix logarithm acts on the positive-definite elastic right
+Cauchy--Green tensor. This Hencky-type energy is used only on the specified
+coaxial path; stability under more general loading would require a separate
+analysis of the elastic energy and the coupled flow law.
+The path is coaxial throughout, so let the fixed direction be
+\(\mbf N=\operatorname{diag}(1,-1/2,-1/2)\), for which
+\(\tr\mbf N=0\) and \(\mbf N:\mbf N=3/2\). We write the imposed path
+and the integrated plastic factors as
+\begin{align*}
+ \mbf F(t)&=\exp\left[s(t)\mbf N-\tfrac13v(t)\mbf I\right],
+ \qquad J=e^{-v}, \\
+ \bar{\mbf F}^p(t)&=\exp[\gamma(t)\mbf N],
+ \qquad a^p=e^{\beta\gamma}, \\
+ \bar{\mbf F}^e(t)&=\exp[(s-\gamma)\mbf N],
+ \qquad \zeta^e=-v-\beta\gamma.
+\end{align*}
+Here \(s,v,\gamma\) are dimensionless accumulated shear, compression, and
+plastic shear measures, respectively, and \(\dot\gamma=\dot\lambda\) during
+plastic loading. These diagonal factors commute, so the formulas are exact at
+finite deformation. Differentiating the energy along the coaxial elastic
+directions yields
+\begin{align}
+ \mbf M&=2G(s-\gamma)\mbf N,
+ \qquad q=3G(s-\gamma), \label{eq:example_shear_stress}\\
+ p&=K_e(v+\beta\gamma),
+ \qquad \bs\tau=2G(s-\gamma)\mbf N-p\mbf I.
+ \label{eq:example_pressure}
+\end{align}
+The formula for \(q\) assumes \(s-\gamma>0\), as verified below.
+Because the elastic stretch and stress commute, the Mandel and Kirchhoff
+deviatoric invariants coincide on this path. The Cauchy stress is
+\(\bs\sigma=\bs\tau/J\), with Cauchy pressure \(p/J\) and
+Cauchy equivalent shear stress \(q/J\).
+
+Take \(G=10\,\mathrm{MPa}\), \(K_e=20\,\mathrm{MPa}\),
+\(\mu=0.4\), and \(\beta=0.2\), so \(M=0.6\). Start stress-free with
+\(\mbf F=\bar{\mbf F}^p=\mbf I\) and \(a^p=1\). We first apply elastic
+hydrostatic compression to \(v_0=0.05\), \(s=0\), which gives
+\(p_0=1\,\mathrm{MPa}\). At fixed \(v_0\), we then apply elastic shear to
+\(s_0=Mp_0/(3G)=0.02\). The state reaches \(q_0=0.6\,\mathrm{MPa}\)
+on the smooth yield surface, with \(\gamma=0\). Both preload steps are elastic
+and dissipate no power.
+
+Set \(t=0\) at the end of this preload. For \(0\le t\le1\,\mathrm{s}\),
+impose \(s=s_0+\dot\varepsilon_s t\) and
+\(v=v_0+\dot\varepsilon_v t\), with
+\(\dot\varepsilon_s=0.1\,\mathrm{s}^{-1}\) and
+\(\dot\varepsilon_v=0.02\,\mathrm{s}^{-1}\). Consistency and the initial
+state give the exact solution
+\begin{align}
+ \dot\gamma&=\frac{3G\dot\varepsilon_s-MK_e\dot\varepsilon_v}
+ {3G+MK_e\beta},\notag\\
+ &=\frac{23}{270}\,\mathrm{s}^{-1},
+ \qquad \gamma(0)=0, \label{eq:example_multiplier}\\
+ p(t)&=p_0+K_e(\dot\varepsilon_v+\beta\dot\gamma)t,
+ \qquad q(t)=Mp(t), \label{eq:example_stress_path}\\
+ \mathcal D^p(t)&=\mu p(t)\dot\gamma>0,
+ \notag\\
+ \int_0^t\mathcal D^p(u)\,du
+ &=\mu\dot\gamma\left[p_0t+
+ \tfrac12K_e(\dot\varepsilon_v+\beta\dot\gamma)t^2\right].
+ \notag
+\end{align}
+The integral is dissipated energy per reference volume; the integration starts
+after the nondissipative preload. Table~\ref{tab:finite_example} reports the
+values from the closed-form solution. At \(t=1\,\mathrm{s}\),
+the accumulated dissipation is \(0.0466941\,\mathrm{MPa}\), or
+\(46.6941\,\mathrm{kJ/m^3}\) of reference volume.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{c r r r r r r r}
+\hline
+\(t\,[\mathrm{s}]\)&\(J\)&\(p\)&\(q\)&\(p/J\)&\(a^p\)&\(\zeta^p\)&\(\mathcal D^p\)\\
+\hline
+0.0 & 0.951229 & 1.000000 & 0.600000 & 1.051271 & 1.000000 & 0.000000 & 0.034074 \\
+0.5 & 0.941765 & 1.370370 & 0.822222 & 1.455109 & 1.008555 & 0.008519 & 0.046694 \\
+1.0 & 0.932394 & 1.740741 & 1.044444 & 1.866959 & 1.017183 & 0.017037 & 0.059314 \\
+\hline
+\end{tabular}
+\caption{Exact finite-deformation path. Stresses are in MPa and
+\(\mathcal D^p\) in MPa/s per reference volume; \(J,a^p,\zeta^p\)
+are dimensionless. The total volume decreases while the plastic volume
+increases. The Cauchy equivalent shear stress is \(q/J\).}
+\label{tab:finite_example}
+\end{table}
+
+The isochoric determinant is preserved identically:
+\begin{align}
+ \det\bar{\mbf F}^p&=\exp(\gamma\tr\mbf N),\notag\\
+ &=1.
+ \label{eq:example_determinant}
+\end{align}
+Since \(p\ge1\,\mathrm{MPa}\) and \(q=Mp>0\), the plastic flow
+direction remains defined throughout the reported interval. The energy and
+stress formulas also give the exact power balance
+\begin{align}
+ \bs\tau:\mbf L-\dot\psi
+ &=q\dot\gamma-p\beta\dot\gamma,\notag\\
+ &=\mathcal D^p.
+ \label{eq:example_power_check}
+\end{align}
+Thus elastic volumetric compression offsets plastic dilation while the
+combined plastic power remains positive.
+
+To check the small-strain limit, scale the preload and subsequent accumulated
+logarithmic strains by \(\eta>0\), keeping the material constants fixed.
+Then \(\gamma\) scales by \(\eta\),
+\(\mbf F=\mbf I+\eta(s\mbf N-v\mbf I/3)+O(\eta^2)\), and
+\(J=1-\eta v+O(\eta^2)\). Equations
+\eqref{eq:example_shear_stress}--\eqref{eq:example_multiplier} therefore
+recover the stress-rate equations and multiplier in
+\eqref{eq:coupled_stress_rates}--\eqref{eq:coupled_multiplier}, with
+Cauchy--Kirchhoff stress differences of order \(\eta^2\). At the final
+state, \(1/J-1=e^{0.07\eta}-1\): its values for
+\(\eta=1,0.1,0.01\) are \(7.25082\times10^{-2}\),
+\(7.02456\times10^{-3}\), and \(7.00245\times10^{-4}\), respectively.
+This analytical limit and the finite-volume values provide checks for a
+material-point implementation along the stated coaxial loading history.
+Material-specific validation requires comparison with experiments.
 
 \section{Discussion}
 \label{sec:discussion}
 
-The split \(\mbf F=\mbf A\bar{\mbf F}\) gives the two plastic rates distinct
-physical roles.  True-plastic flow rearranges material without changing its
-volume, whereas plastic distension changes the volume accommodated by that
-material.  The free-energy inequality shows how each mechanism contributes to
-plastic power, and any constitutive model must keep their sum nonnegative.  When a
-microstructural volume variable closes the general split, these rates can
-represent independent mechanisms.  Under the Flory closure used here, they
-are the isochoric and volumetric parts of conventional plastic flow.
+Separating the mechanisms shows where plastic work goes and how plastic shape
+change is tied to volume change. Take a confined specimen that dilates as it
+shears. Expansion against the confining pressure consumes part of the work
+supplied by shear. With energetic hardening neglected,
+\eqref{eq:small_strain_power} gives this work balance directly: the shear
+power is \(q\dot\gamma\), the power needed for dilation is
+\(p\dot\zeta^p\), and the remainder is dissipated. The coupled law assigns the
+dilation cost through \(\beta\) and the dissipative resistance through
+\(\mu\). Their sum gives the frictional yield slope \(M\). The difference
+between the friction and dilation slopes therefore has a concrete physical
+meaning in this specialization.
 
-The independent and coupled models give different responses.  With separate
-yield conditions, either mechanism can flow alone, or both can flow with
-independent multipliers.  A one-surface model has only one loading condition
-and one multiplier, so it cannot reproduce all three cases without an
-additional coupling rule.  The Drucker--Prager model provides that rule through
-a common multiplier, a dilatancy constraint, and stress-dependent dissipation.
+This interpretation follows the stress-dependent dissipation construction of
+Collins and Houlsby (1997) \cite[Sec.~5]{collins1997}. The present kinematics
+attach each rate to a finite-deformation quantity: isochoric plastic
+deformation for shear and plastic distension for volume change.
+Equations~\eqref{eq:finite_flow_rules} then evolve the corresponding factors
+while \eqref{eq:plastic_dissipation} accounts for their power. For the
+cohesionless law considered here, equal friction and dilation slopes give
+\(\mu=0\): all shear power is balanced by dilation work, and the plastic
+dissipation is zero. This limit concerns this particular law; an associated
+model with cohesion or other dissipative resistance can dissipate positive
+power.
 
-The decomposition also identifies how a dilating frictional solid dissipates
-energy.  Under compression, plastic distension contributes negative power
-during dilation, while the true-plastic mechanism contributes sufficient
-positive power to make their sum \(\mu p\dot\gamma\).  If each contribution
-were required to be nonnegative on its own, the model would allow compaction
-but not dilation.  Dilation is possible because the positive isochoric
-contribution offsets the negative volumetric contribution.
+Maximum plastic dissipation adds a stronger constitutive requirement to
+nonnegative dissipation. In its classical convex form, it compares the work
+of admissible stresses through a given plastic rate, with the internal state
+and elastic domain held fixed. The resulting flow belongs to the normal cone
+of that domain \cite{bland1957,simo1988}. The independent model has this
+normality property at a fixed hardening state: its active rates combine the
+outward normals of the full elastic domain, including at a corner. The
+coupled model instead has a flow direction normal to the yield surface in
+generalized-force space when the pressure is held fixed. In physical stress
+space, a change of pressure also changes the dissipative strength \(\mu p\),
+which affects the slope of the yield surface. The model therefore satisfies
+nonnegative dissipation while producing non-associated flow in the physical
+stresses. Classical results that rely on normality in the physical stress
+require a separate assessment for this coupled law.
 
-The present theory applies locally to isotropic, cohesionless materials under
-monotone compression with \(q>0\).  Elasticity, hardening or softening,
-reversal, and anisotropy
-require additional constitutive choices that preserve the power in
-\eqref{eq:plastic_dissipation}.  Under the adopted Flory closure, the displayed
-stress measures and rate equations fully specify the plastic response
-considered here.
+The work balance also explains why dilation requires coupling in this model.
+Under compression, independently dissipative distension driven only by
+\(-p\) compacts the material. Dilation consumes power through that same
+force, so the coupled mechanism draws on the positive shear contribution.
+Independent activation describes pressure-driven pore collapse or grain
+crushing, where volume change has its own onset. Shared activation describes a
+prescribed amount of dilation during shear. A material exhibiting both
+behaviors would generally require a coupled shear-dilation mechanism together
+with a separate compaction mechanism. The loading comparison in
+Section~\ref{sec:loading_comparison} shows the resulting difference in stress
+path and plastic volume change.
+
+A more general distension closure would retain a physical state variable,
+such as porosity, and the work done through its conjugate force. Herrmann's
+\(p\)--\(\alpha\) description and Drumheller's mixture kinematics provide
+physical context for such a choice \cite{herrmann1969,drumheller2000}.
+The rescaling argument in Section~\ref{sec:energy_class} shows what must
+change to give that variable its own stored energy. The Flory-closed example
+uses conventional plastic volume and shape factors to show the forces, the
+flow laws, and the evolution of the factors at finite deformation. A porosity
+model would also need constitutive laws and calibration for the material.
 
 \section{Conclusions}
 \label{sec:conclusions}
 
-This paper gives apparent non-associated plasticity a mechanism-resolved
-finite-deformation formulation based on the split
-\(\mbf F=\mbf A\bar{\mbf F}\).  The free-energy inequality separates
-true-plastic deformation from plastic distension and identifies their
-conjugate forces as a deviatoric Mandel-type stress and the negative of the
-compression-positive mean stress.  Each independent mechanism follows an
-associated flow rule, but their combined plastic strain rate need not be normal
-to either yield surface.
+The finite-deformation formulation separates plastic shape change from
+plastic volume change and pairs each rate with the force that does work
+through it. When the mechanisms yield independently, their combined flow is
+associated with the full elastic domain. When they are coupled, the flow
+direction is normal to the yield surface in generalized-force space at fixed
+pressure. The pressure-dependent dissipation and the dilation constraint make
+the flow non-associated in physical stress space. The small-strain
+construction agrees with the Collins--Houlsby model. At finite deformation, we
+identify the factors that carry the plastic rates, the energy restrictions the
+split requires, and the consequences of independent or shared activation. The
+homogeneous example verifies the stress path, plastic determinant, volume
+change, power balance, and small-strain reduction within that closure.
 
-For the stated isotropic, cohesionless, monotone compression regime, coupling
-the mechanisms through a state-dependent dissipation potential gives an exact
-Drucker--Prager specialization.  The construction yields the yield slope
-\(M=\mu+\beta\), the dilation slope \(\beta\), and the nonnegative power
-\(\mu p\dot\gamma\).  In terms of the two forces that drive the internal
-mechanisms, the flow is associated.  Substituting pressure and shear stress for
-those forces gives the plastic potential \(g=q-\beta p\) and the familiar
-non-associated flow rule.  Under the Flory closure, the same division of
-plastic power carries to the conventional finite-deformation volumetric and
-isochoric plastic factors.  The small-strain law agrees with the
-Collins--Houlsby generalized-stress construction; the additional content is the
-identification of its kinematic carriers and of the activation and closure
-needed to interpret them as distinct physical mechanisms.
+The demonstrated model assumes isotropy, cohesionless response, no energetic
+hardening, smooth active states with \(q>0\), and monotone compression. The
+exact example further assumes coaxial loading and the stated elastic energy.
+Apex plastic loading, reversal, anisotropy, and independently energetic
+microstructure require additional constitutive specifications.
 
 \section*{Acknowledgements}
 
@@ -1036,22 +1303,21 @@ Caverns in the Permian Basin: Seal Integrity Evaluation and Field Test,'' and
 DE-AR0001864283, assigned control number 2784-1755, ``Cyclic Injection for
 Commercial Seismic-Safe Geologic H$_2$ Production.''
 
-\section*{Declaration of generative AI and AI-assisted technologies}
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
 
-From \GitHistoryFirstDate{} through the latest covered commit on
-\GitHistoryLastDate{}, the author used OpenAI Codex (GPT-5.6 Terra and GPT-5.6
-Sol) and GitHub Copilot (DeepSeek-V4-Flash) within an author-directed,
-version-controlled manuscript-development workflow. AI assistance was used to
-propose and critique prose, examine notation and equation references, check
-derivations for consistency, identify literature and bibliography issues, and
-check the LaTeX output. The author determined the scientific questions,
-theoretical structure, assumptions, mathematical arguments, physical
-interpretations, and final wording. Every accepted change was reviewed by the
-author, and equations and citations were checked against manuscript source and
-primary literature as applicable. AI output was not treated as a scholarly
-source or credited with authorship. The author takes full responsibility for
-the accuracy, originality, and integrity of the work.
-The repository at \url{https://github.com/johntfoster/nonassociated_plasticity} is available for inspection of the manuscript's changes and development history; it does not include the specific prompts used.
+During preparation and revision of this work, the author used OpenAI Codex
+(including GPT-6.1 Terra for revision review) and GitHub Copilot (including
+DeepSeek V4.1 Flash) in an author-directed manuscript-development workflow. The
+assistance included proposing and revising manuscript prose and responses to
+reviewers, discussing physical interpretations, checking derivations, notation,
+and cross-references, locating and checking literature, and preparing and
+inspecting \LaTeX{} output. A final revision pass aligned the manuscript and the
+point-by-point response in plain language and verified the reported equation,
+section, table, and page references against the built manuscript. The author
+directs the scientific content and reviews the proposed changes, and takes full
+responsibility for the accuracy, originality, and integrity of the work.
+The repository at \url{https://github.com/johntfoster/nonassociated_plasticity}
+records the version-controlled development history.
 
 \bibliographystyle{plain}
 \bibliography{references}
